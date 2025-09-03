@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  color: #0f172a;
+  background: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+}
+
+.nav a {
+  margin-left: 16px;
+  text-decoration: none;
+  color: #475569;
+}
+
+.hero {
+  padding: 64px 0;
+  background: #dbeafe;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 28px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 10px 16px;
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
