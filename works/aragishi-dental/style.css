@@ -1,0 +1,357 @@
+/* ===== ベース ===== */
+body {
+  margin: 0;
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f4f4f4;
+}
+
+html,
+body {
+  height: 100vh; /* 1画面を1セクションに */
+  scroll-snap-type: y proximity;
+  /* scroll-snap-type: y mandatory;  */
+  overflow-y: none;
+}
+
+header,
+section {
+  height: 100vh; /* 1画面を1セクションに */
+}
+
+/* スナップする要素だけ */
+.snap {
+  scroll-snap-align: start;
+  /* 必要なら次のスナップまで素通りさせない */
+  scroll-snap-stop: always;
+}
+
+footer {
+  display: flex;
+  background-color: #d5eaee;
+  height: 5vh;
+  padding: 10px 0px;
+  justify-content: center;
+}
+
+/* ===== ヒーロー ===== */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0;
+  padding-top: clamp(80px, 15vh, 120px);
+  aspect-ratio: 16 / 9;
+  overflow: hidden; /* 背景がはみ出さないように */
+}
+
+/* 背景ラッパーを絶対配置 */
+.hero__bg {
+  position: absolute;
+  inset: 0; /* top,right,bottom,left全部0 */
+  z-index: -1; /* 背景に回す */
+}
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* cover動作を再現 */
+  display: block;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 5vw, 32px);
+  width: 100%;
+  padding-left: clamp(24px, 6vw, 48px);
+  align-items: flex-start;
+}
+.hero__title {
+  font-family: "Noto Serif JP", serif;
+  color: #333;
+  font-size: clamp(16px, 2.5vw, 45px);
+  font-weight: 600;
+  line-height: clamp(32px, 3vw, 85px);
+  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
+  margin: 0;
+  text-align: left;
+}
+.hero__price {
+  display: flex;
+  justify-content: flex-start;
+}
+.hero__price img {
+  width: clamp(260px, 40vw, 700px);
+}
+.hero__points {
+  display: flex;
+  justify-content: flex-start;
+}
+.hero__points img {
+  width: clamp(95px, 15vw, 208px);
+  margin-left: clamp(-20px, -5vw, 10px);
+}
+.hero__points img:first-child {
+  margin-left: 0;
+}
+
+/* ===== ヘッダー（ナビ） ===== */
+.float-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 32px);
+  padding: clamp(8px, 2vh, 16px);
+  background: rgba(44, 25, 25, 0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+.nav-logo img {
+  height: 35px;
+  display: block;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(12px, 1vw, 24px);
+}
+.menu_item {
+  font-family: "Noto Serif JP", serif;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1;
+  font-size: clamp(12px, 1.5vw, 24px);
+  padding: 8px 6px;
+  border-radius: 4px;
+}
+.menu_item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ハンバーガー（PCは非表示） */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+.hamburger img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+/* ===== フロートボタン列（画面下・右寄せ） ===== */
+.float-btns {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-right: clamp(8px, 0.5vw, 12px);
+  background: rgba(44, 25, 25, 0.2);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  z-index: 999;
+  height: clamp(68px, 5vw, 80px);
+}
+.float-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 600;
+  font-size: clamp(12px, 3vw, 18px);
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease;
+}
+.float-btn:hover {
+  background: #006666;
+}
+/* 隠す時 */
+.float-btns.is-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.float-btn img {
+  width: 20px;
+  height: 20px;
+}
+/* 個別 */
+.float-btn-tel {
+  color: #fff;
+  background: #1d4e53;
+  height: clamp(16px, 0.5vw, 28px);
+}
+.float-btn-tel img {
+  padding-top: 4px;
+}
+.float-btn-web {
+  background: #fff;
+  color: #1d4e53;
+  border: 2px solid #1d4e53;
+  border-bottom: none;
+  height: clamp(15px, 0.5vw, 27px);
+}
+.float-btn-top {
+  display: flex;
+  align-items: center;
+}
+/* 吹き出し画像（WEB予約上） */
+.float-web-wrap {
+  position: relative;
+  display: inline-block;
+}
+.float-note-img {
+  position: absolute;
+  left: 50%;
+  bottom: 85%;
+  transform: translateX(-50%);
+  width: 240px;
+  height: auto;
+  pointer-events: none;
+}
+
+.label {
+  display: none;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 768px) {
+  /* ヒーローの文字・ポイント整列 */
+  .hero__title {
+    font-weight: 800;
+    text-align: center;
+  }
+  .hero__price,
+  .hero__points {
+    justify-content: center;
+  }
+  .hero__points img {
+    margin-left: -10px;
+  }
+
+  /* ハンバーガー表示／メニューをオフキャンバスへ */
+  .hamburger {
+    display: block !important;
+    margin-left: auto;
+    position: relative;
+    z-index: 1101;
+  }
+  .nav-menu {
+    position: fixed;
+    top: clamp(50px, 8vh, 97px);
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+
+    background: rgba(44, 25, 25, 0.5); /* 半透明が必須 */
+    backdrop-filter: blur(6px) saturate(110%) contrast(105%);
+    -webkit-backdrop-filter: blur(6px) saturate(110%) contrast(105%);
+
+    transform: translateY(100%); /* ←軸をYに統一 */
+    transition: transform 0.3s ease;
+
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    z-index: 1200;
+
+    /* あると安定することが多い */
+    will-change: transform, backdrop-filter;
+  }
+  .nav-menu.open {
+    transform: translateY(0);
+  }
+  @supports not (
+    (
+      backdrop-filter: blur(1px),
+    )
+  ) {
+    .nav-menu {
+      background: rgba(44, 25, 25, 0.75);
+    }
+  }
+  .nav-logo img {
+    height: 24px;
+  }
+}
+
+/* スマホ背景差し替え（縦全画面） */
+@media (max-width: 430px) {
+  .hero {
+    background: url("./assets/images/hero_bg_sp.png") center top/cover no-repeat;
+    height: 100vh;
+    aspect-ratio: auto;
+  }
+  .hero__content {
+    padding-left: 0%;
+    align-items: center;
+  }
+
+  .float-btns {
+    padding-right: 0%;
+    justify-content: center;
+  }
+  footer {
+    font-size: small;
+    height: 5vh;
+    padding: 10px 0px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 370px) {
+  .detail {
+    display: none;
+  }
+  .label {
+    display: inline;
+  }
+}
+
+/* 初期は表示してOK。JSがhero可視時に .is-hidden を付けます */
+.float-btns {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* 隠す時：下にしまう＋クリック不可 */
+.float-btns.is-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 低モーション環境 */
+@media (prefers-reduced-motion: reduce) {
+  .float-btns,
+  .float-btns.is-hidden {
+    transition: none;
+  }
+}

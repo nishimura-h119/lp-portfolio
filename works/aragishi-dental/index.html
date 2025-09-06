@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>新岸歯科クリニック｜受診促進LP</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-    <p>新岸歯科クリニック｜受診促進LP</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>新岸歯科クリニック｜受診促進LP</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="dental">
+    <script src="./main.js"></script>
+
+    <nav class="float-nav-bar">
+      <a href="#top" class="nav-logo">
+        <img
+          src="./assets/images/clinic_logo_1.png"
+          alt="新岸歯科クリニックのロゴ"
+        />
+      </a>
+
+      <!-- ハンバーガーアイコン -->
+      <a
+        href="javascript:void(0);"
+        class="hamburger"
+        aria-label="メニューを開閉"
+      >
+        <img src="./assets/images/menu.svg" alt="ハンバーガーメニュー" />
+      </a>
+
+      <!-- メニュー群 -->
+      <div class="nav-menu">
+        <a href="#what" class="menu_item">マウスピース矯正とは</a>
+        <a href="#feature" class="menu_item">特徴</a>
+        <a href="#flow" class="menu_item">矯正の流れ</a>
+        <a href="#cost" class="menu_item">費用</a>
+        <a href="#faq" class="menu_item">よくある質問</a>
+        <a href="#access" class="menu_item">アクセス</a>
+      </div>
+    </nav>
+    <div class="float-btns">
+      <!-- 電話 -->
+      <a href="tel:1234567890" class="float-btn float-btn-tel">
+        <img src="./assets/images/voicemail.svg" alt="電話" />
+        <span class="detail">1234-56-7890</span>
+        <span class="label">TEL</span>
+      </a>
+
+      <div class="float-web-wrap">
+        <img
+          src="./assets/images/float_note.png"
+          alt="まずはお気軽に相談してください！"
+          class="float-note-img"
+        />
+        <a href="#reserve" class="float-btn float-btn-web">
+          <img src="./assets/images/computer.svg" alt="WEB予約" />
+          <span class="detail">WEB予約はこちら</span>
+          <span class="label">WEB予約</span>
+        </a>
+      </div>
+
+      <!-- TOPへ -->
+      <a href="#top" class="float-btn-top">
+        <img src="./assets/images/float_btn_top.svg" alt="TOPへ" />
+      </a>
+    </div>
+
+    <!-- 1: ファーストビュー（スナップ有効） -->
+    <header class="hero snap" id="top">
+      <div class="hero__bg">
+        <img src="./assets/images/hero_bg.png" alt="" />
+      </div>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          透明だから気づかれない。
+          <br />マウスピース矯正で自然な笑顔へ
+        </h1>
+        <div class="hero__price">
+          <img
+            src="./assets/images/hero_price.png"
+            alt="歯列矯正の価格カード"
+          />
+        </div>
+        <div class="hero__points">
+          <img
+            src="./assets/images/hero_point_1.png"
+            alt="歯列矯正のポイント"
+          />
+          <img
+            src="./assets/images/hero_point_2.png"
+            alt="歯列矯正のポイント"
+          />
+          <img
+            src="./assets/images/hero_point_3.png"
+            alt="歯列矯正のポイント"
+          />
+        </div>
+      </div>
+    </header>
+
+    <section id="worries" class="snap">お悩み</section>
+    <section id="what">マウスピース矯正とは</section>
+    <section id="feature">特徴</section>
+    <section id="flow" class="snap">流れ</section>
+    <section id="cost" class="snap">費用</section>
+    <section id="faq" class="snap">よくある質問</section>
+    <section id="access" class="snap">アクセス</section>
+    <div id="after-snap-sentinel" aria-hidden="true"></div>
+
+    <footer>© 2025 新岸歯科クリニック　All rights reserved.</footer>
+  </body>
 </html>
