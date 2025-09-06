@@ -35,6 +35,25 @@ footer {
   justify-content: center;
 }
 
+/* ===== オーバーレイ ===== */
+.nav-overlay {
+  position: fixed;
+  height: 105%;
+  width: 105%;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ===== ヒーロー ===== */
 .hero {
   position: relative;
@@ -114,6 +133,7 @@ footer {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   z-index: 1000;
+  backdrop-filter: blur(4px);
 }
 .nav-logo img {
   height: 35px;
@@ -261,43 +281,33 @@ footer {
   }
   .nav-menu {
     position: fixed;
-    top: clamp(50px, 8vh, 97px);
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%) scale(0.8); /* 初期は縮小 */
+    opacity: 0; /* 初期は透明 */
+    width: 80%;
+    max-width: 320px;
+    height: auto;
+    padding: 24px;
+    background: rgb(135, 126, 126);
+    border-radius: 12px; /* モーダル感を強調 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
-    padding: 18px 0;
 
-    background: rgba(44, 25, 25, 0.5); /* 半透明が必須 */
-    backdrop-filter: blur(6px) saturate(110%) contrast(105%);
-    -webkit-backdrop-filter: blur(6px) saturate(110%) contrast(105%);
-
-    transform: translateY(100%); /* ←軸をYに統一 */
-    transition: transform 0.3s ease;
-
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     z-index: 1200;
 
-    /* あると安定することが多い */
-    will-change: transform, backdrop-filter;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
+
   .nav-menu.open {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) scale(1); /* 中央にフルサイズで表示 */
+    opacity: 1;
   }
-  @supports not (
-    (
-      backdrop-filter: blur(1px),
-    )
-  ) {
-    .nav-menu {
-      background: rgba(44, 25, 25, 0.75);
-    }
-  }
+
   .nav-logo img {
     height: 24px;
   }

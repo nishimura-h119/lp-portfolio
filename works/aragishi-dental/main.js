@@ -1,19 +1,40 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.querySelector(".hamburger img");
+  const hamburger = document.querySelector(".hamburger");
+  const icon = document.querySelector(".hamburger img");
   const navMenu = document.querySelector(".nav-menu");
+  const overlay = document.querySelector(".nav-overlay");
+  const menuItems = document.querySelectorAll(".menu_item");
 
-  let isOpen = false;
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      overlay.classList.remove("open");
+      icon.src = "./assets/images/menu.svg";
+      icon.alt = "ハンバーガーメニュー";
+    });
+  });
 
-  hamburger.parentElement.addEventListener("click", () => {
-    isOpen = !isOpen;
-    navMenu.classList.toggle("open", isOpen);
+  // 開閉切り替え
+  const toggleMenu = () => {
+    const isOpen = navMenu.classList.toggle("open");
+    overlay.classList.toggle("open", isOpen);
+
     if (isOpen) {
-      hamburger.src = "./assets/images/close.svg";
-      hamburger.alt = "メニューを閉じる";
+      icon.src = "./assets/images/close.svg";
+      icon.alt = "メニューを閉じる";
     } else {
-      hamburger.src = "./assets/images/menu.svg";
-      hamburger.alt = "ハンバーガーメニュー";
+      icon.src = "./assets/images/menu.svg";
+      icon.alt = "ハンバーガーメニュー";
     }
+  };
+
+  // ハンバーガークリックで開閉
+  hamburger.addEventListener("click", toggleMenu);
+
+  // オーバーレイクリックで閉じる
+  overlay.addEventListener("click", () => {
+    navMenu.classList.remove("open");
+    overlay.classList.remove("open");
   });
 });
 
