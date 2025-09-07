@@ -70,7 +70,7 @@
       </a>
     </div>
 
-    <!-- 1: ファーストビュー（スナップ有効） -->
+    <!-- ファーストビュー -->
     <header class="hero snap" id="top">
       <div class="hero__bg">
         <img src="./assets/images/hero_bg.png" alt="" />
@@ -103,13 +103,309 @@
       </div>
     </header>
 
-    <section id="worries" class="snap">お悩み</section>
-    <section id="what">マウスピース矯正とは</section>
-    <section id="feature">特徴</section>
-    <section id="flow" class="snap">流れ</section>
-    <section id="cost" class="snap">費用</section>
-    <section id="faq" class="snap">よくある質問</section>
-    <section id="access" class="snap">アクセス</section>
+    <!-- お悩み -->
+    <section id="worries" class="snap">
+      <div class="section-title">お悩み</div>
+    </section>
+
+    <!-- マウスピース矯正とは -->
+    <section id="what">
+      <div class="section-title">マウスピース矯正とは</div>
+    </section>
+
+    <!-- 特徴 -->
+    <section id="feature"><div class="section-title">特徴</div></section>
+
+    <!-- 流れ -->
+    <section id="flow" class="snap">
+      <div class="section-title">流れ</div>
+    </section>
+
+    <!-- 費用 -->
+    <section id="cost" class="snap">
+      <div class="section-title">費用</div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section id="faq" class="snap">
+      <div class="section-title">よくある質問</div>
+
+      <div class="accordion-container">
+        <!--  -->
+        <!--  -->
+        <div class="accordion-header-1">
+          <div class="accordion-header-q">Q</div>
+          <div class="accordion-header-text" onclick="toggleAccordion(this)">
+            治療に痛みはありますか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="accordion-header-1">
+          <div class="accordion-header-q">Q</div>
+          <div class="accordion-header-text" onclick="toggleAccordion(this)">
+            矯正期間中に注意することはありますか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="accordion-header-1">
+          <div class="accordion-header-q">Q</div>
+          <div class="accordion-header-text" onclick="toggleAccordion(this)">
+            矯正器具が壊れたり・なくしたりした場合はどうしたらいいでしょうか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!--  -->
+        <!--  -->
+
+        <!-- <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            治療に痛みはありますか？
+
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              新しいマウスピースに交換した直後や歯の移動により、数日間痛みが生じる場合があります。
+            </div>
+          </div>
+        </div> -->
+        <!-- 
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            矯正期間中に注意することはありますか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              装置がお口の中にあることで虫歯や歯周病などのトラブルのリスクが高まるため、ブラッシングをいつも以上に丁寧にするなどのケアを怠らないでください。
+            </div>
+          </div>
+        </div> -->
+        <!-- 
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            矯正器具が壊れたり・なくしたりした場合はどうしたらいいでしょうか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              すぐに当院へご連絡ください。再発注いたします。壊れたまま使い続けると治療の効果が十分に得られなくなります。
+            </div>
+          </div>
+        </div> -->
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            しゃべりにくさがありますか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              治療開始直後は、違和感が強く出てしゃべりにくさを感じる場合があります。ただ、数日でなれる場合が多く、あまり心配する必要はありません。
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            お手入れは難しくありませんか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              基本的には、水道水での洗浄で問題ありません。高温(40℃以上)になるとマウスピースが変形する恐れがあるため、ご注意ください。より清潔に使用したい場合は、専用の洗浄剤の使用をおすすめします。
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <div class="accordion-header" onclick="toggleAccordion(this)">
+            精密検査ではどのようなことをしますか？
+            <a
+              href="javascript:void(0);"
+              class="accordion accordion-arrow"
+              aria-label="アコーディオンを開閉"
+            >
+              <img
+                src="./assets/images/keyboard_arrow_down.svg"
+                alt="アコーディオンを開く"
+              />
+            </a>
+          </div>
+          <div class="accordion-content">
+            <div class="accordion-text">
+              顔と口内の写真撮影・レントゲン・口腔内スキャナーなどの撮影を主におこないますが、内容は症状に応じて変わります。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- アクセス -->
+    <section id="access" class="access">
+      <div class="section-title">アクセス</div>
+
+      <div class="access__content">
+        <div class="access__top">
+          <!-- 左側：クリニック情報 -->
+          <div class="access__left">
+            <div class="access__clinic-info">
+              <div class="access__clinic-info__img">
+                <img
+                  src="./assets/images/clinic_logo_2.png"
+                  alt="新岸歯科クリニックのロゴ"
+                />
+              </div>
+              <div class="clinic-schedule">
+                <table>
+                  <thead>
+                    <tr>
+                      <th class="header-title-left">診療時間</th>
+                      <th>月</th>
+                      <th>火</th>
+                      <th>水</th>
+                      <th>木</th>
+                      <th>金</th>
+                      <th>土</th>
+                      <th class="header-title-right">日</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="time">09:00～13:00</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>×</td>
+                    </tr>
+                    <tr>
+                      <td class="time">14:30～20:00</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>○</td>
+                      <td>×</td>
+                      <td>×</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="clinic-notes">
+                <p class="note1">休診日：土曜午後・日曜・祝日</p>
+                <p class="note2">
+                  ※学会等で休診になる場合があります。その際はHPでお知らせします。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- ラベルバー -->
+          <div class="access__right label-bar-group">
+            <div class="label-bar">
+              <div class="label-bar__header">住所</div>
+              <div class="label-bar__content">
+                〒755-0033<br />山口県宇部市琴芝町X丁目XX番地XX
+              </div>
+            </div>
+            <div class="label-bar">
+              <div class="label-bar__header">アクセス</div>
+              <div class="label-bar__content">XX駅から徒歩5分　駐車場あり</div>
+            </div>
+            <div class="label-bar">
+              <div class="label-bar__header">電話番号</div>
+              <div class="label-bar__content">1234-56-7890</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 地図 -->
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6619.10361935224!2d131.2434200942516!3d33.952653822500835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354380ce379727fb%3A0x96dceabf9b9093a4!2z55C06Iqd6aeF!5e0!3m2!1sja!2sjp!4v1757175399942!5m2!1sja!2sjp"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
     <div id="after-snap-sentinel" aria-hidden="true"></div>
 
     <footer>© 2025 新岸歯科クリニック　All rights reserved.</footer>

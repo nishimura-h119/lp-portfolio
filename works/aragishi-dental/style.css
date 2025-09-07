@@ -6,26 +6,145 @@ body {
   color: #333;
   background: #f4f4f4;
 }
-
 html,
 body {
-  height: 100vh; /* 1画面を1セクションに */
-  scroll-snap-type: y proximity;
-  /* scroll-snap-type: y mandatory;  */
-  overflow-y: none;
+  height: 100%;
+  /* scroll-snap-type: y mandatory; */
 }
+section {
+  height: 100vh;
+  /* scroll-snap-align: start; */
+  padding-top: calc(clamp(50px, 8vh, 97px) + 16px);
+}
+/*  */
+/*  */
+/*  */
+/*  */
+
+.accordion-container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Noto Serif JP", serif;
+  color: #333;
+  line-height: clamp(32px, 3vw, 85px);
+  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 13%);
+  padding: 12px 24px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+.accordion-header-1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.accordion-header-q {
+  background: #a4cdd5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px 0px 0px 8px;
+  font-weight: 500;
+  content: "Q";
+  font-weight: bold;
+  font-size: 24px;
+  padding: 16px 24px;
+}
+
+.accordion-header-text {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 4vw;
+  border-radius: 0px 8px 8px 0px;
+  padding-right: 24px;
+  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 8%);
+}
+
+.accordion-header:hover {
+  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 8%);
+}
+
+.accordion-header::before {
+  font-weight: 500;
+  content: "Q";
+  font-weight: bold;
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.accordion-item.active .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  background: linear-gradient(445deg, #f3c879 0%, #efdbb8 13%);
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 500px;
+  padding: 25px;
+}
+
+.accordion-content::before {
+  content: "A";
+  font-weight: bold;
+  font-size: 24px;
+  color: #8b4513;
+  float: left;
+  margin-right: 15px;
+  line-height: 1.6;
+}
+
+.accordion-text {
+  color: #5d4e37;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-left: 39px;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 header,
 section {
-  height: 100vh; /* 1画面を1セクションに */
+  height: 100vh;
 }
 
 /* スナップする要素だけ */
-.snap {
+/* .snap {
   scroll-snap-align: start;
-  /* 必要なら次のスナップまで素通りさせない */
   scroll-snap-stop: always;
-}
+} */
 
 footer {
   display: flex;
@@ -89,15 +208,23 @@ footer {
   padding-left: clamp(24px, 6vw, 48px);
   align-items: flex-start;
 }
-.hero__title {
+.hero__title,
+.section-title {
   font-family: "Noto Serif JP", serif;
   color: #333;
-  font-size: clamp(16px, 2.5vw, 45px);
-  font-weight: 600;
   line-height: clamp(32px, 3vw, 85px);
   letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
   margin: 0;
+}
+.hero__title {
+  font-size: clamp(16px, 2.5vw, 45px);
+  font-weight: 600;
   text-align: left;
+}
+.section-title {
+  font-size: clamp(14px, 2.5vw, 40px);
+  font-weight: 500;
+  text-align: center;
 }
 .hero__price {
   display: flex;
@@ -313,8 +440,225 @@ footer {
   }
 }
 
+.map {
+  display: flex;
+  justify-content: center;
+}
+
+.map iframe {
+  width: clamp(300px, 70vw, 920px);
+  height: clamp(300px, 70vh, 400px);
+  border: 0;
+}
+
+.access__content {
+  display: flex;
+}
+
+/* ラベルバー */
+.label-bar-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.label-bar {
+  font-family: Noto Serif JP;
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.label-bar__header {
+  border-radius: 10px;
+  background-color: #5f7eaf;
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 1.1rem;
+}
+
+.label-bar__content {
+  padding: 12px;
+  color: #333;
+  font-size: 1rem;
+}
+
+.clinic-schedule {
+  max-width: 500px;
+  overflow-x: auto;
+}
+
+.clinic-schedule table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  color: #333;
+}
+
+.clinic-schedule th,
+.clinic-schedule td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #4a6fa5; /* 行の下線 */
+}
+
+.clinic-schedule thead th {
+  background-color: #5a7db0;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px;
+}
+
+.clinic-schedule .header-title-left {
+  border-radius: 12px 0 0 0; /* 左端の角丸 */
+}
+.clinic-schedule .header-title-right {
+  border-radius: 0 12px 0 0; /* 左端の角丸 */
+}
+
+.clinic-schedule .time {
+  font-weight: bold;
+  color: #333;
+}
+
+.access__clinic-info img {
+  max-width: 500px;
+}
+
+.access__clinic-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .access__content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 15px;
+  }
+
+  .access__clinic-info img {
+    width: 250px;
+  }
+
+  /* .map iframe {
+    width: clamp(200px, 50vw, 500px);
+    height: 300px;
+    border: 0;
+  } */
+
+  .clinic-schedule table {
+    font-size: 12px;
+  }
+
+  .clinic-schedule {
+    display: flex;
+  }
+
+  .clinic-schedule th,
+  .clinic-schedule td {
+    padding: 8px 4px;
+  }
+
+  .label-bar__header {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .label-bar__content {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .map {
+    height: 250px;
+  }
+}
+
+.access__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.access__top {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+/*  */
+/*  */
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .access__content {
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 15px;
+  }
+
+  .access__clinic-info__img {
+    text-align: center;
+  }
+
+  .clinic-schedule table {
+    font-size: 12px;
+  }
+
+  .clinic-schedule th,
+  .clinic-schedule td {
+    padding: 8px 4px;
+  }
+
+  .label-bar__header {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .label-bar__content {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  .map {
+    height: 250px;
+  }
+
+  .access__top {
+    flex-direction: column;
+  }
+}
+
+.clinic-notes {
+  font-family: "Noto Serif JP", serif;
+  font-weight: bold;
+  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
+  margin: 16px 0px;
+}
+
+.note1 {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+.note2 {
+  margin: 0;
+  font-size: clamp(12px, 1.5vw, 14px);
+}
+
+/*  */
+/*  */
+
 /* スマホ背景差し替え（縦全画面） */
 @media (max-width: 430px) {
+  section {
+    padding-top: calc(clamp(50px, 8vh, 97px) + 14px);
+  }
   .hero {
     background: url("./assets/images/hero_bg_sp.png") center top/cover no-repeat;
     height: 100vh;
@@ -364,4 +708,14 @@ footer {
   .float-btns.is-hidden {
     transition: none;
   }
+}
+
+.access {
+  background-color: #fdfbf7;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 40px;
 }

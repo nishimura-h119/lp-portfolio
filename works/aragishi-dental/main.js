@@ -112,3 +112,19 @@ document.addEventListener("DOMContentLoaded", () => {
     apply();
   });
 });
+
+function toggleAccordion(element) {
+  const accordionItem = element.parentElement;
+  const isActive = accordionItem.classList.contains("active");
+
+  // 他の全てのアコーディオンを閉じる
+  const allItems = document.querySelectorAll(".accordion-item");
+  allItems.forEach((item) => {
+    item.classList.remove("active");
+  });
+
+  // クリックされたアイテムが非アクティブだった場合のみ開く
+  if (!isActive) {
+    accordionItem.classList.add("active");
+  }
+}
