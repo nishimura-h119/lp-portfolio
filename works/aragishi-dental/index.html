@@ -11,9 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./main.js" defer></script>
   </head>
   <body class="dental">
-    <script src="./main.js"></script>
     <div class="nav-overlay"></div>
 
     <nav class="float-nav-bar">
@@ -35,7 +35,7 @@
 
       <!-- メニュー群 -->
       <div class="nav-menu">
-        <a href="#what" class="menu_item">マウスピース矯正とは</a>
+        <a href="#about" class="menu_item">マウスピース矯正とは</a>
         <a href="#feature" class="menu_item">特徴</a>
         <a href="#flow" class="menu_item">矯正の流れ</a>
         <a href="#cost" class="menu_item">費用</a>
@@ -104,210 +104,566 @@
     </header>
 
     <!-- お悩み -->
-    <section id="worries" class="snap">
-      <div class="section-title">お悩み</div>
+    <section id="worries" class="snap worries worries__bg">
+      <div class="section-title">矯正したいけど…不安がいっぱい…</div>
+      <img
+        src="./assets/images/worries_1.png"
+        alt="お悩み"
+        class="worries_image"
+      />
     </section>
 
     <!-- マウスピース矯正とは -->
-    <section id="what">
-      <div class="section-title">マウスピース矯正とは</div>
+    <section id="about" class="about about__bg">
+      <div class="about-container">
+        <div class="section-title">マウスピース矯正とは？</div>
+
+        <div class="section-subtitle">
+          薄く透明なマウスピースを歯に装着し、段階的に交換しながら歯を少しずつ動かしていく矯正方法です。<br />
+          金属ワイヤーを使わないため、見た目や生活のストレスを減らしながら矯正できます。
+        </div>
+
+        <!-- メリット -->
+        <div class="section-header">メリット</div>
+        <div class="points-grid">
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number">01</div>
+              <img
+                src="./assets/images/merit_1.svg"
+                alt="透明で目立ちにくい"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">透明で目立ちにくい</div>
+              <div class="point-description">
+                マウスピースが透明のため周囲に気づかれにくく、周囲に気づかれずに矯正できます。
+              </div>
+            </div>
+          </div>
+
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number">02</div>
+              <img
+                src="./assets/images/merit_2.svg"
+                alt="取り外し可能"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">取り外し可能</div>
+              <div class="point-description">
+                食事や歯磨きのときに外すことができるので、衛生的に管理することができます。
+              </div>
+            </div>
+          </div>
+
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number">03</div>
+              <img
+                src="./assets/images/merit_3.svg"
+                alt="取り外し可能"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">通院回数が少なめ</div>
+              <div class="point-description">
+                ワイヤー矯正に比べて通院負担が軽い場合が多いです。
+                当院では1.5～2か月に1度の通院となります。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- デメリット -->
+        <div class="section-header demerit">デメリット</div>
+        <div class="points-grid">
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number demerit">01</div>
+              <img
+                src="./assets/images/demerit_1.svg"
+                alt="治療適応外の可能性"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">治療適応外の可能性</div>
+              <div class="point-description">
+                重度の不正咬合は対象外になる場合があります。
+              </div>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number demerit">02</div>
+              <img
+                src="./assets/images/demerit_2.svg"
+                alt="装着時間が長い"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">装着時間が長い</div>
+              <div class="point-description">
+                治療効果を得るために、1日20〜22時間の装着が必須となります。
+              </div>
+            </div>
+          </div>
+          <div class="point-item">
+            <div class="point-header">
+              <div class="point-number demerit">03</div>
+              <img
+                src="./assets/images/demerit_3.svg"
+                alt="紛失や破損のリスク"
+                class="point-image"
+              />
+            </div>
+            <div class="point-content">
+              <div class="point-title">紛失や破損のリスク</div>
+              <div class="point-description">
+                外して管理するため、なくしたり壊したりする可能性があります。
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- 特徴 -->
-    <section id="feature"><div class="section-title">特徴</div></section>
+    <div class="feature_bg">
+      <!-- <svg
+        class="top-decoration"
+        viewBox="0 0 1440 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 64L189.241 33.4186C220.876 28.3064 253.126 28.2957 284.764 33.387L430.982 56.9166C460.167 61.6131 489.886 61.9703 519.175 57.9768L705.707 32.5434C734.09 28.6735 762.88 28.8885 791.201 33.1817L946.997 56.7989C978.465 61.5692 1010.49 61.3015 1041.88 56.0058L1165.97 35.0658C1198.76 29.5329 1232.24 29.49 1265.05 34.939L1440 64V26.7087V0H724.614H0V25.7008V64Z"
+          fill="#D1E9EC"
+        />
+      </svg> -->
+      <section id="feature" class="feature">
+        <div class="section-title">当院のマウスピース矯正が選ばれる理由</div>
+        <div class="section-subtitle">
+          薄く透明なマウスピースを歯に装着し、段階的に交換しながら歯を少しずつ動かしていく矯正方法です。<br />
+          金属ワイヤーを使わないため、見た目や生活のストレスを減らしながら矯正できます。
+        </div>
 
-    <!-- 流れ -->
-    <section id="flow" class="snap">
-      <div class="section-title">流れ</div>
+        <!-- 特徴1: 最新の口腔内スキャナー導入 -->
+        <div class="feature-item">
+          <div class="feature-content">
+            <div class="feature-header">
+              <div class="feature-text">特徴</div>
+              <div class="feature-number">1</div>
+            </div>
+            <h3 class="feature-title">最新の口腔内スキャナー導入</h3>
+            <p class="feature-description">
+              歯型をシリコンで取る必要がなく、短時間で快適に精密データを取得できます。
+            </p>
+          </div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_1.svg" />
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <!-- 特徴2: 治療計画を3Dシミュレーションで確認 -->
+        <div class="feature-item">
+          <div class="space"></div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_2.svg" />
+          </div>
+          <div class="feature-content">
+            <div class="feature-header reverse">
+              <div class="feature-number reverse">2</div>
+              <div class="feature-text reverse">特徴</div>
+            </div>
+            <h3 class="feature-title">治療計画を3Dシミュレーションで確認</h3>
+            <p class="feature-description">
+              歯型をシリコンで取る必要がなく、短時間で快適に精密データを取得できます。
+            </p>
+          </div>
+        </div>
+
+        <!-- 特徴3: 女性ドクター・女性スタッフ在籍 -->
+        <div class="feature-item">
+          <div class="feature-content">
+            <div class="feature-header">
+              <div class="feature-text">特徴</div>
+              <div class="feature-number">3</div>
+            </div>
+            <h3 class="feature-title">女性ドクター・女性スタッフ在籍</h3>
+            <p class="feature-description">
+              デリケートなお悩みも相談しやすく、初めての方でも安心して通えます
+            </p>
+          </div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_3.svg" />
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <!-- 特徴4: 治療計画を3Dシミュレーションで確認 -->
+        <div class="feature-item">
+          <div class="space"></div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_4.svg" />
+          </div>
+          <div class="feature-content">
+            <div class="feature-header reverse">
+              <div class="feature-number reverse">4</div>
+              <div class="feature-text reverse">特徴</div>
+            </div>
+            <h3 class="feature-title">明確なトータルフィー制度</h3>
+            <p class="feature-description">
+              総額 895,000円（税込）で追加費用なし。
+              検査から治療完了まで安心の定額制です。
+            </p>
+          </div>
+        </div>
+
+        <!-- 特徴5: 柔軟な支払い方法 -->
+        <div class="feature-item">
+          <div class="feature-content">
+            <div class="feature-header">
+              <div class="feature-text">特徴</div>
+              <div class="feature-number">5</div>
+            </div>
+            <h3 class="feature-title">柔軟な支払い方法</h3>
+            <p class="feature-description">
+              クレジットカード・デンタルローン対応で、月々少額から始められます。
+            </p>
+          </div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_5.svg" />
+          </div>
+          <div class="space"></div>
+        </div>
+
+        <!-- 特徴6: 地域密着の安心サポート -->
+        <div class="feature-item">
+          <div class="space"></div>
+          <div class="feature-image">
+            <img src="./assets/images/feature_6.svg" />
+          </div>
+          <div class="feature-content">
+            <div class="feature-header reverse">
+              <div class="feature-number reverse">6</div>
+              <div class="feature-text reverse">特徴</div>
+            </div>
+            <h3 class="feature-title">地域密着の安心サポート</h3>
+            <p class="feature-description">
+              宇部で開院して14年。地元に根差した歯科として、患者さん一人ひとりに丁寧に対応します。
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- <svg
+        class="bottom-decoration"
+        viewBox="0 0 1440 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 64L189.241 33.4186C220.876 28.3064 253.126 28.2957 284.764 33.387L430.982 56.9166C460.167 61.6131 489.886 61.9703 519.175 57.9768L705.707 32.5434C734.09 28.6735 762.88 28.8885 791.201 33.1817L946.997 56.7989C978.465 61.5692 1010.49 61.3015 1041.88 56.0058L1165.97 35.0658C1198.76 29.5329 1232.24 29.49 1265.05 34.939L1440 64V26.7087V0H724.614H0V25.7008V64Z"
+          fill="#D1E9EC"
+        />
+      </svg> -->
+    </div>
+
+    <!-- 矯正の流れ -->
+    <section id="flow" class="flow snap">
+      <div class="section-title">矯正の流れ</div>
+
+      <div class="treatment-carousel-wrapper">
+        <button
+          class="carousel-nav-btn carousel-btn-next"
+          id="treatmentPrevBtn"
+        >
+          <img src="./assets/images/flow_pre_btn.svg" alt="前へボタン" />
+        </button>
+
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          "
+        >
+          <div class="flow-label" id="stepBadge">
+            <text class="step">STEP</text>
+            <p class="step-number">1</p>
+          </div>
+
+          <div class="treatment-info-card" id="treatmentCard">
+            <div class="treatment-stage-title section-title" id="stageTitle">
+              無料カウンセリング
+            </div>
+            <img
+              src="./assets/images/flow_1.png"
+              alt="治療ステップ画像"
+              style="max-width: 100%; height: auto; margin: 16px 0"
+            />
+            <div
+              class="treatment-description section-subtitle"
+              id="stageDescription"
+            >
+              現在のお悩みやご希望を伺い、治療方法や期間の目安をご説明します。
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="carousel-nav-btn carousel-btn-next"
+          id="treatmentNextBtn"
+        >
+          <img src="./assets/images/flow_back_btn.svg" alt="次へボタン" />
+        </button>
+      </div>
+
+      <div class="step-indicators-row" id="stepDots"></div>
     </section>
 
+    <div style="height: clamp(100px, 150px, 200px)"></div>
+
     <!-- 費用 -->
-    <section id="cost" class="snap">
+    <section id="cost" class="snap cost">
+      <!-- V字のDivider -->
+      <div class="complex-v-divider">
+        <svg
+          viewBox="0 0 1440 144"
+          preserveAspectRatio="none"
+          class="complex-v-divider-svg"
+        >
+          <path d="M0 0L720 102.238L1440 0Z" fill="#F4F4F4" />
+          <path
+            d="M0 0L720 102.238L1440 0V41L720 143.5L0 43V0Z"
+            fill="#E4EFF1"
+          />
+        </svg>
+      </div>
+
+      <!-- 費用セクション -->
       <div class="section-title">費用</div>
+      <div class="section-subtitle">
+        当院では、トータルフィー制度を導入しているため、<br />追加費用の心配なく、矯正治療を進めることができます。
+      </div>
+      <!-- 料金表カード -->
+      <div class="pricing-card">
+        <div class="no-additional-fee-badge">追加料金<br />なし</div>
+
+        <div class="main-price-section">
+          <div class="price-label">総額</div>
+          <div class="main-price">895,000</div>
+          <div class="price-tax">
+            円
+            <p>（税込）</p>
+          </div>
+        </div>
+
+        <div class="price-breakdown">
+          <div class="price-item">
+            <div class="price-item-name">初診相談</div>
+            <div class="price-item-value">0円</div>
+          </div>
+          <div class="price-item">
+            <div class="price-item-name">精密検査・診断料</div>
+            <div class="price-item-value">220,000円</div>
+          </div>
+          <div class="price-item">
+            <div class="price-item-name">マウスピース装置料（全顎）</div>
+            <div class="price-item-value">675,000円</div>
+          </div>
+          <div class="price-item">
+            <div class="price-item-name">調整費用</div>
+            <div class="price-item-value">0円</div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="pay-note">
+        <div class="pay-note-item">
+          <div class="pay-note-decoration"></div>
+          <div class="pay-note-text">クレジットカード払い対応</div>
+        </div>
+        <div class="pay-note-item">
+          <div class="pay-note-decoration"></div>
+          <div class="pay-note-text">デンタルローン対応</div>
+        </div>
+      </div>
     </section>
 
     <!-- よくある質問 -->
-    <section id="faq" class="snap">
+    <section id="faq" class="snap faq faq_bg">
+      <!-- V字のDivider(費用セクションの下部) -->
+      <div class="complex-v-divider">
+        <svg
+          viewBox="0 0 1440 144"
+          preserveAspectRatio="none"
+          class="complex-v-divider-svg"
+        >
+          <path d="M0 0L720 102.238L1440 0Z" fill="#F4F4F4" />
+          <path
+            d="M0 0L720 102.238L1440 0V41L720 143.5L0 43V0Z"
+            fill="#E4EFF1"
+          />
+          <path
+            d="M0 0L720 102.238L1440 0V41L720 143.5L0 43V0Z"
+            fill="#E4EFF1"
+          />
+          <path d="M0 0L720 102.238L1440 0Z" fill="#D5EAEE" />
+        </svg>
+      </div>
       <div class="section-title">よくある質問</div>
-
       <div class="accordion-container">
-        <!--  -->
-        <!--  -->
-        <div class="accordion-header-1">
-          <div class="accordion-header-q">Q</div>
-          <div class="accordion-header-text" onclick="toggleAccordion(this)">
-            治療に痛みはありますか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="accordion-header-1">
-          <div class="accordion-header-q">Q</div>
-          <div class="accordion-header-text" onclick="toggleAccordion(this)">
-            矯正期間中に注意することはありますか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
-          </div>
-        </div>
-        <div class="accordion-header-1">
-          <div class="accordion-header-q">Q</div>
-          <div class="accordion-header-text" onclick="toggleAccordion(this)">
-            矯正器具が壊れたり・なくしたりした場合はどうしたらいいでしょうか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
-          </div>
-        </div>
-
-        <!--  -->
-        <!--  -->
-
-        <!-- <div class="accordion-item">
+        <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            治療に痛みはありますか？
-
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              治療に痛みはありますか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
               新しいマウスピースに交換した直後や歯の移動により、数日間痛みが生じる場合があります。
             </div>
           </div>
-        </div> -->
-        <!-- 
+        </div>
         <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            矯正期間中に注意することはありますか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              矯正期間中に注意することはありますか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
               装置がお口の中にあることで虫歯や歯周病などのトラブルのリスクが高まるため、ブラッシングをいつも以上に丁寧にするなどのケアを怠らないでください。
             </div>
           </div>
-        </div> -->
-        <!-- 
+        </div>
         <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            矯正器具が壊れたり・なくしたりした場合はどうしたらいいでしょうか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              矯正器具が壊れたり・なくしたりした場合はどうしたらいいでしょうか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
               すぐに当院へご連絡ください。再発注いたします。壊れたまま使い続けると治療の効果が十分に得られなくなります。
             </div>
           </div>
-        </div> -->
-
+        </div>
         <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            しゃべりにくさがありますか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              しゃべりにくさがありますか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
               治療開始直後は、違和感が強く出てしゃべりにくさを感じる場合があります。ただ、数日でなれる場合が多く、あまり心配する必要はありません。
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            お手入れは難しくありませんか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              お手入れは難しくありませんか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
               基本的には、水道水での洗浄で問題ありません。高温(40℃以上)になるとマウスピースが変形する恐れがあるため、ご注意ください。より清潔に使用したい場合は、専用の洗浄剤の使用をおすすめします。
             </div>
           </div>
         </div>
-
         <div class="accordion-item">
           <div class="accordion-header" onclick="toggleAccordion(this)">
-            精密検査ではどのようなことをしますか？
-            <a
-              href="javascript:void(0);"
-              class="accordion accordion-arrow"
-              aria-label="アコーディオンを開閉"
-            >
-              <img
-                src="./assets/images/keyboard_arrow_down.svg"
-                alt="アコーディオンを開く"
-              />
-            </a>
+            <div class="accordion-header-q">Q</div>
+            <div class="accordion-header-text">
+              精密検査ではどのようなことをしますか？
+              <a
+                href="javascript:void(0);"
+                class="accordion accordion-arrow"
+                aria-label="アコーディオンを開閉"
+              >
+                <img
+                  src="./assets/images/keyboard_arrow_down.svg"
+                  alt="アコーディオンを開く"
+                />
+              </a>
+            </div>
           </div>
           <div class="accordion-content">
-            <div class="accordion-text">
-              顔と口内の写真撮影・レントゲン・口腔内スキャナーなどの撮影を主におこないますが、内容は症状に応じて変わります。
+            <div class="accordion-content-a">A</div>
+            <div class="accordion-content-text">
+              基本的には、水道水での洗浄で問題ありません。高温(40℃以上)顔と口内の写真撮影・レントゲン・口腔内スキャナーなどの撮影を主におこないますが、内容は症状に応じて変わります。
             </div>
           </div>
         </div>
@@ -320,7 +676,7 @@
 
       <div class="access__content">
         <div class="access__top">
-          <!-- 左側：クリニック情報 -->
+          <!-- クリニック情報①(ロゴ・診療時間) -->
           <div class="access__left">
             <div class="access__clinic-info">
               <div class="access__clinic-info__img">
@@ -376,7 +732,7 @@
             </div>
           </div>
 
-          <!-- ラベルバー -->
+          <!-- クリニック情報②(住所・アクセス・電話番号) -->
           <div class="access__right label-bar-group">
             <div class="label-bar">
               <div class="label-bar__header">住所</div>

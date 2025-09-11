@@ -5,10 +5,13 @@ body {
   line-height: 1.6;
   color: #333;
   background: #f4f4f4;
+  overflow-x: hidden;
 }
+
 html,
 body {
   height: 100%;
+  overflow-x: hidden;
   /* scroll-snap-type: y mandatory; */
 }
 section {
@@ -16,11 +19,8 @@ section {
   /* scroll-snap-align: start; */
   padding-top: calc(clamp(50px, 8vh, 97px) + 16px);
 }
-/*  */
-/*  */
-/*  */
-/*  */
 
+/* ===== アコーディオン ===== */
 .accordion-container {
   max-width: 800px;
   margin: 0 auto;
@@ -34,23 +34,10 @@ section {
   margin-bottom: 10px;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.accordion-header {
-  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 13%);
-  padding: 12px 24px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 18px;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  position: relative;
-}
-
-.accordion-header-1 {
+.accordion-header,
+.accordion-content {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,33 +56,18 @@ section {
   font-size: 24px;
   padding: 16px 24px;
 }
-
 .accordion-header-text {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  padding: 12px 0px;
   padding-left: 4vw;
-  border-radius: 0px 8px 8px 0px;
   padding-right: 24px;
-  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 8%);
-}
-
-.accordion-header:hover {
-  background: linear-gradient(445deg, #a4cdd5 0%, #d1e9ec 8%);
-}
-
-.accordion-header::before {
-  font-weight: 500;
-  content: "Q";
-  font-weight: bold;
-  font-size: 24px;
-  margin-right: 15px;
-}
-
-.accordion-item.active .accordion-arrow {
-  transform: rotate(180deg);
+  border-radius: 0px 8px 8px 0px;
+  background: linear-gradient(445deg, #a4cdd5 2%, #d1e9ec 10%);
+  margin-left: -1px;
 }
 
 .accordion-content {
@@ -104,36 +76,34 @@ section {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
+  border-radius: 8px;
 }
-
-.accordion-item.active .accordion-content {
-  max-height: 500px;
-  padding: 25px;
-}
-
-.accordion-content::before {
-  content: "A";
+.accordion-content-a {
+  background: #f3c879;
+  color: #8b4513;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px 0px 0px 8px;
+  font-weight: 500;
   font-weight: bold;
   font-size: 24px;
-  color: #8b4513;
-  float: left;
-  margin-right: 15px;
-  line-height: 1.6;
+  padding: 16px 24px;
 }
-
-.accordion-text {
-  color: #5d4e37;
+.accordion-content-text {
   font-size: 16px;
   line-height: 1.8;
-  margin-left: 39px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(445deg, #f3c879 2%, #efdbb8 10%);
+  margin-left: -1px;
+  padding: 12px 0px;
+  padding-left: 4vw;
+  padding-right: 24px;
 }
-
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
-/*  */
 
 header,
 section {
@@ -545,12 +515,6 @@ footer {
     width: 250px;
   }
 
-  /* .map iframe {
-    width: clamp(200px, 50vw, 500px);
-    height: 300px;
-    border: 0;
-  } */
-
   .clinic-schedule table {
     font-size: 12px;
   }
@@ -592,8 +556,765 @@ footer {
   gap: 32px;
 }
 
-/*  */
-/*  */
+.clinic-notes,
+.section-subtitle {
+  font-family: "Noto Serif JP", serif;
+  font-weight: bold;
+  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
+  margin: 16px 0px;
+}
+
+.note1 {
+  margin: 0;
+  font-size: clamp(14px, 1.5vw, 16px);
+}
+.note2 {
+  margin: 0;
+  font-size: clamp(12px, 1.5vw, 14px);
+}
+
+/* 初期は表示してOK。JSがhero可視時に .is-hidden を付けます */
+.float-btns {
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* 隠す時：下にしまう＋クリック不可 */
+.float-btns.is-hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 低モーション環境 */
+@media (prefers-reduced-motion: reduce) {
+  .float-btns,
+  .float-btns.is-hidden {
+    transition: none;
+  }
+}
+
+.access,
+.faq,
+.cost,
+.feature {
+  background-color: #fdfbf7;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  height: auto;
+  padding-bottom: 40px;
+}
+.faq,
+.feature {
+  padding-top: 0%;
+  gap: 32px;
+  height: auto;
+}
+.feature {
+  z-index: 3;
+}
+.worries {
+  background-color: #a4cdd5;
+  height: auto;
+}
+
+.worries .section-title {
+  font-weight: 800;
+  text-align: left;
+  padding-left: 5%;
+  width: 100%;
+}
+
+.section-subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+}
+
+.worries__bg {
+  /* height: 100vh;
+  width: 100%; */
+  background-image: url(./assets/images/worries_bg.png);
+  background-size: auto;
+  background-position: bottom;
+  background-repeat: repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  /* padding-bottom: 2%; */
+  flex-direction: column;
+}
+
+.top-decoration {
+  width: 100%;
+  height: 64px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  transform: rotate(180deg);
+}
+
+.bottom-decoration {
+  width: 100%;
+  max-width: 100%;
+  height: 64px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.feature {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: #d1e9ec;
+  position: relative;
+  overflow: hidden;
+}
+
+.worries_image {
+  width: 100%;
+  top: -15%;
+  object-fit: contain;
+  position: relative;
+}
+
+.worries .worries_text {
+  width: 100%;
+  padding: 0 5%;
+  text-align: center;
+  font-family: "Noto Serif JP", serif;
+  font-size: clamp(16px, 2.5vw, 24px);
+  font-weight: 600;
+  color: #333;
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  box-sizing: border-box;
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.about {
+  height: 100%;
+  height: auto;
+  width: 100%;
+  background-image: url("./assets/images/about_bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f4f4;
+  margin-bottom: 4vh;
+}
+
+.flow img {
+  display: flex;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+}
+
+button:disabled {
+  text-decoration: none;
+}
+
+.about {
+  position: relative;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto 32px auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.section-header {
+  background-color: #e8af47;
+  font-family: "Noto Serif JP", serif;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 60px 0 40px;
+  border-radius: 8px;
+}
+
+.section-header.demerit,
+.point-number.demerit {
+  background-color: #788fae;
+}
+
+.points-grid {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-left: 5%;
+  align-items: start;
+}
+
+.point-item {
+  text-align: center;
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.point-number {
+  position: absolute;
+  top: 10%;
+  left: 18%;
+  transform: translateX(-50%);
+  width: 86px;
+  height: 86px;
+  background-color: #e8af47;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.point-content {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  padding: 48px 24px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin-top: -36px;
+  max-width: 260px;
+  margin-right: 28%;
+}
+
+.demerit .point-number {
+  background: linear-gradient(135deg, #7fb3d3, #5d9cbc);
+}
+
+.point-header {
+  z-index: 2;
+}
+
+.point-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.point-title {
+  font-family: "Noto Serif JP", serif;
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.point-description {
+  font-family: "Noto Serif JP", serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  text-align: left;
+}
+
+.faq_bg {
+  height: auto;
+  width: 100%;
+  background-image: url("./assets/images/faq_bg.jpg");
+  background-color: rgba(255, 255, 255, 0.8);
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* 
+
+/* 
+
+
+*/
+/* 料金表カード */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 48px 48px 24px 48px;
+  width: 60vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* 追加料金なしバッジ（山形カット型） */
+.no-additional-fee-badge {
+  position: absolute;
+  top: -2%;
+  left: 5%;
+  background: #f3c879;
+  color: #333;
+  padding: 16px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Noto Sans JP", sans-serif;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 85%, 0% 100%);
+  width: 8%;
+  height: 16%;
+  text-align: center;
+  line-height: 2.1;
+  letter-spacing: 0.11em;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* メイン料金表示 */
+.main-price-section {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+}
+
+.price-label {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  font-family: "Noto Serif JP", serif;
+  line-height: clamp(32px, 3vw, 85px);
+  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
+}
+
+.main-price {
+  background: linear-gradient(
+    180deg,
+    #0e1238 0%,
+    #1e2540 20%,
+    #607eaf 30%,
+    #7ba5c6 35%,
+    #607eaf 40%,
+    #1e2540 50%,
+    #1e2540 70%,
+    #5685b8 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: "Noto Serif JP", serif;
+}
+
+.price-tax {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  font-family: "Noto Serif JP", serif;
+  line-height: clamp(32px, 3vw, 85px);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+
+.price-tax p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-family: "Noto Serif JP", serif;
+  line-height: clamp(32px, 3vw, 85px);
+  margin: 0;
+}
+
+/* 料金詳細テーブル */
+.price-breakdown {
+  margin: 40px 0;
+  width: 100%;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 12px;
+  border-bottom: 1px solid #7ba5c6;
+  font-size: 1.1rem;
+  flex-direction: row;
+  font-family: "Noto Serif JP", serif;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+.price-item:first-child {
+  border-top: 1px solid #7ba5c6;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.price-item-name {
+  text-align: left;
+}
+
+/* 支払い方法セクション */
+
+/* 
+        
+        
+        
+        */
+
+.treatment-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 980px;
+  display: flex;
+  gap: 24px;
+}
+
+.treatment-info-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: clamp(24px, 5vw, 60px) clamp(16px, 4vw, 48px) clamp(24px, 4vw, 48px)
+    clamp(16px, 4vw, 48px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+  box-sizing: border-box;
+  /* min-height: clamp(300px, 40vh, 400px); */
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.treatment-info-card.content-fade-out {
+  opacity: 0;
+}
+
+.treatment-stage-title {
+  font-size: clamp(20px, 4vw, 28px);
+  margin-bottom: clamp(16px, 3vw, 24px);
+  color: #333;
+}
+
+.treatment-description {
+  font-size: clamp(14px, 3vw, 18px);
+  color: #666;
+  text-align: left;
+  line-height: 1.6;
+  margin-top: clamp(16px, 3vw, 24px);
+  max-width: clamp(280px, 80%, 600px);
+  height: auto;
+  min-height: clamp(60px, 10vw, 90px);
+}
+
+.carousel-nav-btn {
+  border: none;
+  background: none !important;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.carousel-nav-btn:active,
+.carousel-nav-btn:focus {
+  background: none !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.carousel-btn-next {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.treatment-carousel-wrapper .carousel-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.step-indicators-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 5%;
+  justify-content: center;
+}
+
+.step-indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #a4cdd5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.step-indicator-dot:hover {
+  background-color: rgba(164, 205, 213, 0.3);
+  transform: scale(1.1);
+}
+
+.step-indicator-dot.dot-active {
+  background-color: #a4cdd5;
+  border-color: #7ba5c6;
+  transform: scale(1.2);
+}
+
+.pay-note {
+  font-family: "Noto Serif JP", serif;
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+}
+.pay-note-item {
+  position: relative;
+  display: inline-block;
+  margin: 50px;
+  margin-top: 8%;
+}
+
+.pay-note-decoration {
+  position: absolute;
+  top: -18px;
+  left: -18px;
+  width: 7vh;
+  height: 7vh;
+  background-color: #f6e5b3;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.pay-note-text {
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+  padding: 32px 48px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 32px;
+  border-radius: 4px;
+}
+
+.feature-image {
+  flex: 1;
+  margin: 0 30px;
+}
+
+.feature-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.feature-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  background: linear-gradient(
+    445deg,
+    #f3c879 0%,
+    #f1e8b894 60%,
+    #ffffff00 100%
+  );
+  padding: 16px;
+  width: 100%;
+  font-weight: bold;
+}
+
+.feature-text {
+  font-size: 16px;
+}
+.feature-number {
+  font-size: 20px;
+}
+
+.feature-title {
+  font-size: 32px;
+}
+
+.feature-description {
+  font-size: 24px;
+}
+
+.feature-content {
+  max-width: 600px;
+}
+
+.feature-item {
+  max-width: 1080px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 15px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-header {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .points-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .point-item {
+    padding: 25px 15px;
+  }
+
+  .point-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .point-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.feature {
+  background-color: #d1e9ec;
+  width: 100%;
+  /* padding-top: 0%; */
+  gap: 32px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feature_bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+
+.feature_bg {
+  position: relative;
+  background: #ffffff;
+  font-family: "Noto Serif JP", serif;
+}
+.reverse {
+  transform: scaleX(-1);
+}
+
+.flow-label {
+  display: flex;
+  background-image: url(./assets/images/step.svg);
+  background-position-x: center;
+  background-position-y: center;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  z-index: 10;
+  width: 250px;
+  height: 250px;
+  margin-right: 100%;
+  margin-bottom: -100px; /* カードに重なるように */
+}
+
+.step {
+  fill: none;
+  stroke: #333;
+  stroke-width: 1.5;
+  font-size: 32px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #333;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.18em;
+}
+
+.step-number {
+  font-size: 48px;
+  font-weight: bold;
+  margin-top: inherit;
+}
+
+.cost {
+  background-color: #d5eaee;
+  width: 100%;
+  padding-top: 0%;
+  gap: 32px;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 複層V字デバイダー */
+.complex-v-divider {
+  width: 100%;
+  height: 144px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: transparent;
+}
+
+.complex-v-divider-svg {
+  width: 100%;
+  height: 144px;
+}
+.space {
+  width: 80px;
+  height: 100%;
+}
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
@@ -633,26 +1354,11 @@ footer {
   .access__top {
     flex-direction: column;
   }
-}
 
-.clinic-notes {
-  font-family: "Noto Serif JP", serif;
-  font-weight: bold;
-  letter-spacing: clamp(0.13em, 0.5vw, 0.18em);
-  margin: 16px 0px;
+  .worries__bg {
+    background-image: url("./assets/images/worries_sp.svg");
+  }
 }
-
-.note1 {
-  margin: 0;
-  font-size: clamp(14px, 1.5vw, 16px);
-}
-.note2 {
-  margin: 0;
-  font-size: clamp(12px, 1.5vw, 14px);
-}
-
-/*  */
-/*  */
 
 /* スマホ背景差し替え（縦全画面） */
 @media (max-width: 430px) {
@@ -688,34 +1394,4 @@ footer {
   .label {
     display: inline;
   }
-}
-
-/* 初期は表示してOK。JSがhero可視時に .is-hidden を付けます */
-.float-btns {
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-/* 隠す時：下にしまう＋クリック不可 */
-.float-btns.is-hidden {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* 低モーション環境 */
-@media (prefers-reduced-motion: reduce) {
-  .float-btns,
-  .float-btns.is-hidden {
-    transition: none;
-  }
-}
-
-.access {
-  background-color: #fdfbf7;
-  display: flex;
-  gap: 16px;
-  flex-direction: column;
-  height: auto;
-  min-height: 100vh;
-  padding-bottom: 40px;
 }

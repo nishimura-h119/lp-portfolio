@@ -113,18 +113,180 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-function toggleAccordion(element) {
-  const accordionItem = element.parentElement;
-  const isActive = accordionItem.classList.contains("active");
+function toggleAccordion(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector(".accordion-arrow");
+  const arrowImg = arrow.querySelector("img");
 
-  // 他の全てのアコーディオンを閉じる
-  const allItems = document.querySelectorAll(".accordion-item");
-  allItems.forEach((item) => {
-    item.classList.remove("active");
+  // 他のアコーディオンを閉じる
+  const allContents = document.querySelectorAll(".accordion-content");
+  const allArrows = document.querySelectorAll(".accordion-arrow");
+
+  allContents.forEach((item) => {
+    if (item !== content) {
+      item.classList.remove("active");
+      item.style.maxHeight = "0";
+    }
   });
 
-  // クリックされたアイテムが非アクティブだった場合のみ開く
-  if (!isActive) {
-    accordionItem.classList.add("active");
+  allArrows.forEach((item) => {
+    if (item !== arrow) {
+      item.classList.remove("active");
+      const img = item.querySelector("img");
+      img.src = "./assets/images/keyboard_arrow_down.svg";
+      img.alt = "アコーディオンを開く";
+    }
+  });
+
+  // クリックされたアコーディオンの開閉
+  if (content.classList.contains("active")) {
+    content.classList.remove("active");
+    content.style.maxHeight = "0";
+    arrow.classList.remove("active");
+    arrowImg.src = "./assets/images/keyboard_arrow_down.svg";
+    arrowImg.alt = "アコーディオンを開く";
+  } else {
+    content.classList.add("active");
+    content.style.maxHeight = "fit-content";
+    arrow.classList.add("active");
+    arrowImg.src = "./assets/images/keyboard_arrow_up.svg";
+    arrowImg.alt = "アコーディオンを閉じる";
   }
 }
+
+// ステップのデータ
+const treatmentSteps = [
+  {
+    number: 1,
+    title: "無料カウンセリング",
+    subtitle:
+      "現在のお悩みやご希望を伺い、治療方法や期間の目安をご説明します。",
+    image: "./assets/images/flow_1.png",
+  },
+  {
+    number: 2,
+    title: "精密検査",
+    subtitle:
+      "レントゲン撮影や口腔内スキャナーで、歯や顎の状態を正確に確認します。",
+    image: "./assets/images/flow_2.png",
+  },
+  {
+    number: 3,
+    title: "診断・治療方針の説明",
+    subtitle:
+      "3Dシミュレーションで治療後の歯並びを確認しながら、最適な治療計画をご提案します。治療方針に同意いただいた後、マウスピースを発注いたします。",
+    image: "./assets/images/flow_3.png",
+  },
+  {
+    number: 4,
+    title: "治療開始",
+    subtitle:
+      "発注から1~2か月ほどでマウスピースが到着します。ここから治療開始となります。マウスピースを順番に装着し、1〜2か月ごとに通院しながら歯を動かしていきます。",
+    image: "./assets/images/flow_4.png",
+  },
+  {
+    number: 5,
+    title: "保定期間",
+    subtitle:
+      "マウスピースでの矯正が完了したら、リテーナー(保定装置)を装着していただきます。3～6か月に一度通院していただき、歯並びのチェックを行います(約2年)",
+    image: "./assets/images/flow_5.png",
+  },
+];
+
+let currentStepIndex = 0;
+
+// DOM要素の取得
+document.addEventListener("DOMContentLoaded", () => {
+  const stepCounter = document.getElementById("stepCounter");
+  const stageTitle = document.getElementById("stageTitle");
+  const stageDescription = document.getElementById("stageDescription");
+  const treatmentCard = document.getElementById("treatmentCard");
+  const treatmentPrevBtn = document.getElementById("treatmentPrevBtn");
+  const treatmentNextBtn = document.getElementById("treatmentNextBtn");
+  const stepDots = document.getElementById("stepDots");
+
+  // プログレスドットの初期化
+  function initStepDots() {
+    stepDots.innerHTML = "";
+    treatmentSteps.forEach((_, index) => {
+      const dot = document.createElement("div");
+      dot.className = `step-indicator-dot ${
+        index === currentStepIndex ? "dot-active" : ""
+      }`;
+      dot.addEventListener("click", () => navigateToStep(index));
+      stepDots.appendChild(dot);
+    });
+  }
+
+  // コンテンツの更新
+  function refreshContent() {
+    const currentStep = treatmentSteps[currentStepIndex];
+
+    // フェードアウト
+    treatmentCard.classList.add("content-fade-out");
+
+    setTimeout(() => {
+      if (stepCounter) {
+        stepCounter.textContent = currentStep.number;
+      }
+      stageTitle.textContent = currentStep.title;
+      stageDescription.textContent = currentStep.subtitle;
+
+      // 画像の更新
+      const stepImage = treatmentCard.querySelector("img");
+      if (stepImage) {
+        stepImage.src = currentStep.image;
+        stepImage.alt = `${currentStep.title}の画像`;
+      }
+
+      // フェードイン
+      treatmentCard.classList.remove("content-fade-out");
+
+      // ボタンの状態更新
+      treatmentPrevBtn.disabled = currentStepIndex === 0;
+      treatmentNextBtn.disabled =
+        currentStepIndex === treatmentSteps.length - 1;
+
+      // プログレスドットの更新
+      document.querySelectorAll(".step-indicator-dot").forEach((dot, index) => {
+        dot.classList.toggle("dot-active", index === currentStepIndex);
+      });
+    }, 150);
+  }
+
+  // 指定のステップに移動
+  function navigateToStep(stepIndex) {
+    if (stepIndex >= 0 && stepIndex < treatmentSteps.length) {
+      currentStepIndex = stepIndex;
+      refreshContent();
+    }
+  }
+
+  // 前のステップ
+  function goToPreviousStep() {
+    if (currentStepIndex > 0) {
+      navigateToStep(currentStepIndex - 1);
+    }
+  }
+
+  // 次のステップ
+  function goToNextStep() {
+    if (currentStepIndex < treatmentSteps.length - 1) {
+      navigateToStep(currentStepIndex + 1);
+    }
+  }
+
+  // イベントリスナーの設定
+  treatmentPrevBtn.addEventListener("click", goToPreviousStep);
+  treatmentNextBtn.addEventListener("click", goToNextStep);
+
+  // キーボードナビゲーション
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") goToPreviousStep();
+    if (e.key === "ArrowRight") goToNextStep();
+  });
+
+  // 初期化
+  initStepDots();
+  refreshContent();
+});
