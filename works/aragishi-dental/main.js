@@ -154,139 +154,114 @@ function toggleAccordion(header) {
   }
 }
 
-// ステップのデータ
-const treatmentSteps = [
-  {
-    number: 1,
-    title: "無料カウンセリング",
-    subtitle:
-      "現在のお悩みやご希望を伺い、治療方法や期間の目安をご説明します。",
-    image: "./assets/images/flow_1.png",
-  },
-  {
-    number: 2,
-    title: "精密検査",
-    subtitle:
-      "レントゲン撮影や口腔内スキャナーで、歯や顎の状態を正確に確認します。",
-    image: "./assets/images/flow_2.png",
-  },
-  {
-    number: 3,
-    title: "診断・治療方針の説明",
-    subtitle:
-      "3Dシミュレーションで治療後の歯並びを確認しながら、最適な治療計画をご提案します。治療方針に同意いただいた後、マウスピースを発注いたします。",
-    image: "./assets/images/flow_3.png",
-  },
-  {
-    number: 4,
-    title: "治療開始",
-    subtitle:
-      "発注から1~2か月ほどでマウスピースが到着します。ここから治療開始となります。マウスピースを順番に装着し、1〜2か月ごとに通院しながら歯を動かしていきます。",
-    image: "./assets/images/flow_4.png",
-  },
-  {
-    number: 5,
-    title: "保定期間",
-    subtitle:
-      "マウスピースでの矯正が完了したら、リテーナー(保定装置)を装着していただきます。3～6か月に一度通院していただき、歯並びのチェックを行います(約2年)",
-    image: "./assets/images/flow_5.png",
-  },
-];
+// カルーセルの基本機能
+class FlowCarousel {
+  constructor() {
+    this.currentStep = 0;
+    this.totalSteps = 5;
+    this.steps = [
+      {
+        title: "無料カウンセリング",
+        image: "./assets/images/flow_1.png",
+        description:
+          "現在のお悩みやご希望を伺い、治療方法や期間の目安をご説明します。",
+      },
+      {
+        title: "精密検査",
+        image: "./assets/images/flow_2.png",
+        description:
+          "レントゲン撮影や口腔内スキャナーで、歯や顎の状態を正確に確認します。",
+      },
+      {
+        title: "診断・治療方針の説明",
+        image: "./assets/images/flow_3.png",
+        description:
+          "3Dシミュレーションで治療後の歯並びを確認しながら、最適な治療計画をご提案します。治療方針に同意いただいた後、マウスピースを発注いたします。",
+      },
+      {
+        title: "治療開始",
+        image: "./assets/images/flow_4.png",
+        description:
+          "2か月ほどでマウスピースが到着します。ここから治療開始となります。マウスピースを順番に装着し、1〜2か月ごとに通院しながら歯を動かしていきます。",
+      },
+      {
+        title: "保定期間",
+        image: "./assets/images/flow_5.png",
+        description:
+          "マウスピースでの矯正が完了したら、リテーナー(保定装置)を装着していただきます。3～6か月に一度通院していただき、歯並びのチェックを行います(約2年)",
+      },
+    ];
 
-let currentStepIndex = 0;
+    this.init();
+  }
 
-// DOM要素の取得
-document.addEventListener("DOMContentLoaded", () => {
-  const stepCounter = document.getElementById("stepCounter");
-  const stageTitle = document.getElementById("stageTitle");
-  const stageDescription = document.getElementById("stageDescription");
-  const treatmentCard = document.getElementById("treatmentCard");
-  const treatmentPrevBtn = document.getElementById("treatmentPrevBtn");
-  const treatmentNextBtn = document.getElementById("treatmentNextBtn");
-  const stepDots = document.getElementById("stepDots");
+  init() {
+    this.bindEvents();
+    this.updateContent();
+  }
 
-  // プログレスドットの初期化
-  function initStepDots() {
-    stepDots.innerHTML = "";
-    treatmentSteps.forEach((_, index) => {
-      const dot = document.createElement("div");
-      dot.className = `step-indicator-dot ${
-        index === currentStepIndex ? "dot-active" : ""
-      }`;
-      dot.addEventListener("click", () => navigateToStep(index));
-      stepDots.appendChild(dot);
+  bindEvents() {
+    // 前へボタン
+    document.querySelector(".prev-btn").addEventListener("click", () => {
+      this.prevStep();
+    });
+
+    // 次へボタン
+    document.querySelector(".next-btn").addEventListener("click", () => {
+      this.nextStep();
+    });
+
+    // ドットクリック
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        this.goToStep(index);
+      });
     });
   }
 
-  // コンテンツの更新
-  function refreshContent() {
-    const currentStep = treatmentSteps[currentStepIndex];
-
-    // フェードアウト
-    treatmentCard.classList.add("content-fade-out");
-
-    setTimeout(() => {
-      if (stepCounter) {
-        stepCounter.textContent = currentStep.number;
-      }
-      stageTitle.textContent = currentStep.title;
-      stageDescription.textContent = currentStep.subtitle;
-
-      // 画像の更新
-      const stepImage = treatmentCard.querySelector("img");
-      if (stepImage) {
-        stepImage.src = currentStep.image;
-        stepImage.alt = `${currentStep.title}の画像`;
-      }
-
-      // フェードイン
-      treatmentCard.classList.remove("content-fade-out");
-
-      // ボタンの状態更新
-      treatmentPrevBtn.disabled = currentStepIndex === 0;
-      treatmentNextBtn.disabled =
-        currentStepIndex === treatmentSteps.length - 1;
-
-      // プログレスドットの更新
-      document.querySelectorAll(".step-indicator-dot").forEach((dot, index) => {
-        dot.classList.toggle("dot-active", index === currentStepIndex);
-      });
-    }, 150);
-  }
-
-  // 指定のステップに移動
-  function navigateToStep(stepIndex) {
-    if (stepIndex >= 0 && stepIndex < treatmentSteps.length) {
-      currentStepIndex = stepIndex;
-      refreshContent();
+  prevStep() {
+    if (this.currentStep > 0) {
+      this.currentStep--;
+      this.updateContent();
     }
   }
 
-  // 前のステップ
-  function goToPreviousStep() {
-    if (currentStepIndex > 0) {
-      navigateToStep(currentStepIndex - 1);
+  nextStep() {
+    if (this.currentStep < this.totalSteps - 1) {
+      this.currentStep++;
+      this.updateContent();
     }
   }
 
-  // 次のステップ
-  function goToNextStep() {
-    if (currentStepIndex < treatmentSteps.length - 1) {
-      navigateToStep(currentStepIndex + 1);
-    }
+  goToStep(step) {
+    this.currentStep = step;
+    this.updateContent();
   }
 
-  // イベントリスナーの設定
-  treatmentPrevBtn.addEventListener("click", goToPreviousStep);
-  treatmentNextBtn.addEventListener("click", goToNextStep);
+  updateContent() {
+    const step = this.steps[this.currentStep];
 
-  // キーボードナビゲーション
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowLeft") goToPreviousStep();
-    if (e.key === "ArrowRight") goToNextStep();
-  });
+    // ステップ番号更新
+    document.querySelector(".step-number").textContent = this.currentStep + 1;
 
-  // 初期化
-  initStepDots();
-  refreshContent();
+    // コンテンツ更新
+    document.querySelector(".card-title").textContent = step.title;
+    document.querySelector(".card-image").src = step.image;
+    document.querySelector(".card-description").textContent = step.description;
+
+    // ドット更新
+    document.querySelectorAll(".dot").forEach((dot, index) => {
+      dot.classList.toggle("active", index === this.currentStep);
+    });
+
+    // ボタンの有効/無効切り替え
+    document.querySelector(".prev-btn").disabled = this.currentStep === 0;
+    document.querySelector(".next-btn").disabled =
+      this.currentStep === this.totalSteps - 1;
+  }
+}
+
+// 初期化
+document.addEventListener("DOMContentLoaded", () => {
+  new FlowCarousel();
 });

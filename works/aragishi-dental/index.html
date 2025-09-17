@@ -425,58 +425,45 @@
       </svg> -->
     </div>
 
-    <!-- 矯正の流れ -->
-    <section id="flow" class="flow snap">
+    <section class="flow" id="flow">
       <div class="section-title">矯正の流れ</div>
 
-      <div class="treatment-carousel-wrapper">
-        <button
-          class="carousel-nav-btn carousel-btn-next"
-          id="treatmentPrevBtn"
-        >
-          <img src="./assets/images/flow_pre_btn.svg" alt="前へボタン" />
+      <div class="carousel-container">
+        <button class="nav-btn prev-btn">
+          <img src="./assets/images/flow_pre_btn.svg" alt="前へ" />
         </button>
 
-        <div
-          style="
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-          "
-        >
-          <div class="flow-label" id="stepBadge">
-            <text class="step">STEP</text>
-            <p class="step-number">1</p>
+        <div class="flow-content">
+          <div class="step-badge">
+            <span class="step-text">STEP</span>
+            <span class="step-number">1</span>
           </div>
 
-          <div class="treatment-info-card" id="treatmentCard">
-            <div class="treatment-stage-title section-title" id="stageTitle">
-              無料カウンセリング
-            </div>
+          <div class="content-card">
+            <h3 class="card-title">無料カウンセリング</h3>
             <img
               src="./assets/images/flow_1.png"
               alt="治療ステップ画像"
-              style="max-width: 100%; height: auto; margin: 16px 0"
+              class="card-image"
             />
-            <div
-              class="treatment-description section-subtitle"
-              id="stageDescription"
-            >
+            <p class="card-description">
               現在のお悩みやご希望を伺い、治療方法や期間の目安をご説明します。
-            </div>
+            </p>
           </div>
         </div>
 
-        <button
-          class="carousel-nav-btn carousel-btn-next"
-          id="treatmentNextBtn"
-        >
-          <img src="./assets/images/flow_back_btn.svg" alt="次へボタン" />
+        <button class="nav-btn next-btn">
+          <img src="./assets/images/flow_back_btn.svg" alt="次へ" />
         </button>
       </div>
 
-      <div class="step-indicators-row" id="stepDots"></div>
+      <div class="step-indicators">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
     </section>
 
     <div style="height: clamp(100px, 150px, 200px)"></div>

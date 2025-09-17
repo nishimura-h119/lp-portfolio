@@ -110,6 +110,15 @@ section {
   height: 100vh;
 }
 
+.dental {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.dental::-webkit-scrollbar {
+  display: none;
+}
+
 /* スナップする要素だけ */
 /* .snap {
   scroll-snap-align: start;
@@ -220,7 +229,7 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1513,5 +1522,238 @@ button:disabled {
   }
   .label {
     display: inline;
+  }
+}
+
+.lw {
+  font-size: 60px;
+}
+
+.flow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  gap: 40px;
+}
+
+.flow-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  gap: 20px;
+}
+
+.step-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  justify-content: center;
+}
+
+.content-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.step-indicators {
+  display: flex;
+  gap: 12px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #a4cdd5;
+}
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.flow-content {
+  flex: 1; /* 中央部分を伸縮させる */
+}
+
+.flow-content {
+  flex: 1;
+  position: relative; /* 相対位置指定を追加 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-badge {
+  position: absolute; /* 絶対位置指定に変更 */
+  top: -30px;
+  left: -60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  background-image: url("./assets/images/step.svg"); /* 背景画像を使用 */
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.step-text {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-top: -5px;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 40px 30px 30px 30px; /* 上部にバッジ用の余白を追加 */
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 30px; /* バッジとの重なりを考慮 */
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  margin: 16px 0;
+  border-radius: 8px; /* 角を丸くして見た目を良く */
+  display: block;
+  object-fit: cover; /* 画像のアスペクト比を保持 */
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 40px 30px 30px 30px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin-top: 30px;
+  box-sizing: border-box; /* パディングを幅に含める */
+  overflow: hidden; /* はみ出た部分を隠す */
+}
+
+.card-title {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.card-description {
+  margin: 16px 0 0 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .carousel-container {
+    gap: 15px; /* ボタン間の距離を狭める */
+  }
+
+  .nav-btn img {
+    width: 30px; /* ボタンサイズを小さく */
+    height: 30px;
+  }
+
+  .step-badge {
+    width: 100px; /* バッジサイズを小さく */
+    height: 100px;
+    left: -40px;
+    top: -25px;
+  }
+
+  .step-text {
+    font-size: 14px;
+  }
+
+  .step-number {
+    font-size: 20px;
+  }
+
+  .content-card {
+    padding: 35px 20px 25px 20px;
+    margin-top: 25px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flow {
+    padding: 40px 15px; /* 左右の余白を狭める */
+  }
+
+  .carousel-container {
+    gap: 10px;
+  }
+
+  .step-badge {
+    width: 80px;
+    height: 80px;
+    left: -30px;
+    top: -20px;
+  }
+
+  .step-text {
+    font-size: 12px;
+  }
+
+  .step-number {
+    font-size: 16px;
   }
 }
