@@ -26,8 +26,8 @@
         </p>
       </a>
 
-      <!-- 診療時間表 -->
       <div class="flex items-center space-x-11">
+        <!-- 診療時間表 -->
         <div class="flex items-center space-x-5">
           <div
             class="bg-white w-[100px] h-6 px-4 py-2 rounded-lg text-sm font-medium tracking-[.3em] border-1 border-[var(--beige)] flex items-center justify-center"
@@ -210,11 +210,11 @@
         <div
           class="flex items-center space-x-3 text-2xl text-[var(--cream)] font-light tracking-[.15em]"
         >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-            />
-          </svg>
+          <img
+            src="./assets/images/call.png"
+            alt="call"
+            class="object-contain"
+          />
           <span>000-000-0000</span>
         </div>
       </div>
@@ -252,6 +252,7 @@
         <a href="#reserve" class="menu_item">ご予約</a>
       </div>
     </nav>
+
     <section id="merit" class="bg-[var(--cream)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -269,7 +270,12 @@
       </div>
 
       <!-- セクションコンテンツ -->
+      <div class="text-center text-2xl font-bold tracking-[.3em] pt-10 pb-8">
+        人間ドックは、今の自分と未来の自分への投資です。<br />
+        半日を使って、これからの時間を守りましょう。
+      </div>
     </section>
+
     <section id="fee" class="bg-[var(--white)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -284,6 +290,12 @@
         <p class="section-description">
           さまざまなコースをご用意しています。<br />※人間ドックは自費診療となります。
         </p>
+      </div>
+
+      <!-- セクションコンテンツ -->
+      <div class="text-center text-2xl font-normal tracking-[.3em] pt-10 pb-8">
+        上記のボタンからコースの詳細が確認できます。<br />
+        所要時間は目安です。診療状況により前後する可能性がございます。
       </div>
     </section>
     <section id="flow" class="bg-[var(--cream)]">
@@ -301,7 +313,14 @@
           当院の健康診断は以下のステップで進みます。<br />スムーズな検査のために、各手順をご確認ください。
         </p>
       </div>
+
+      <!-- セクションコンテンツ -->
+      <div class="text-center text-2xl font-bold tracking-[.3em] pt-10 pb-8">
+        検査中にご不安なことがあれば、<br />
+        いつでもスタッフにお声がけください。
+      </div>
     </section>
+
     <section id="faq" class="bg-[var(--white)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -315,6 +334,7 @@
         </div>
       </div>
     </section>
+
     <section id="reserve" class="bg-[var(--cream)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -330,6 +350,266 @@
           ご予約は、WEB予約　または　お電話で承っております。<br />
           WEB予約は専用ページに遷移します。
         </p>
+      </div>
+
+      <!-- セクションコンテンツ -->
+      <div class="flex flex-row items-center justify-center pb-12">
+        <!-- 左側 -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.492945537161!2d135.59645383159628!3d34.616981246909056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000d8abe1308301%3A0xef8cd931915dd02e!2z5YWr5bC-6aeF!5e0!3m2!1sja!2sjp!4v1758527524896!5m2!1sja!2sjp"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <!-- 右側 -->
+        <div class="flex flex-col gap-y-8 items-start justify-center p-8">
+          <!-- クリニックロゴ -->
+          <a href="#top" class="flex flex-row items-center space-x-3 pr-10">
+            <img
+              src="./assets/images/hachio_logo.png"
+              alt="クリニックロゴ"
+              class="w-10 h-10 object-contain"
+            />
+            <p
+              class="font-serif leading-16 tracking-widest font-bold text-2xl text-[var(--blue-black)]"
+            >
+              八尾内科クリニック
+            </p>
+          </a>
+
+          <!-- 診療日 -->
+          <div class="flex items-center space-x-11">
+            <div class="flex items-center space-x-5">
+              <table class="text-sm">
+                <thead>
+                  <tr class="">
+                    <th>
+                      <div
+                        class="bg-white w-[100px] h-6 px-4 py-2 rounded-lg text-sm font-medium tracking-[.3em] flex items-center justify-center"
+                      >
+                        <p class="text-[var(--brown-dark)]">診療日</p>
+                      </div>
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)] w-15"
+                    >
+                      月
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      火
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      水
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      木
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      金
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      土
+                    </th>
+                    <th
+                      class="px-3 py-1 text-center font-bold text-[var(--blue-black)]"
+                    >
+                      日
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                    <td
+                      class="text-[var(--blue-black)] text-right font-bold pr-4 py-1 tracking-[.05em] relative"
+                    >
+                      9：00 ~ 13：00
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative w-15"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-y border-white"
+                    >
+                      ×
+                    </td>
+                  </tr>
+                  <tr class="">
+                    <td
+                      class="text-[var(--blue-black)] text-right font-bold pr-4 py-1 tracking-[.05em] relative"
+                    >
+                      14：00 ~ 18：00
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative w-15"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative"
+                    >
+                      ×
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative"
+                    >
+                      ○
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white relative"
+                    >
+                      ×
+                      <div
+                        class="absolute right-0 top-1 bottom-1 w-px bg-[var(--blue-black)]"
+                      ></div>
+                    </td>
+                    <td
+                      class="text-[var(--blue-black)] px-3 py-1 text-center border-white"
+                    >
+                      ×
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 電話番号 -->
+          <div class="flex flex-col gap-y-2">
+            <div
+              class="flex flex-row items-center text-2xl gap-x-5 text-[var(--blue-black)] font-normal tracking-[.15em]"
+            >
+              <img
+                src="./assets/images/call_2.png"
+                alt="call_2"
+                class="object-contain"
+              />
+              <span>000-000-0000</span>
+            </div>
+            <p class="font-bold text-sm tracking-[.1em]">
+              ※お電話は診療時間内のみお受けしております。ご了承ください。
+            </p>
+          </div>
+
+          <!-- 住所 -->
+          <div
+            class="text-[var(--blue-black)] font-normal text-2xl tracking-[.1em] leading-9"
+          >
+            〒581-0085<br />
+            大阪府八尾市安中町３丁目９ＡＢＣビル8階
+          </div>
+        </div>
+      </div>
+
+      <!-- CTAボタン -->
+      <div class="flex gap-4">
+        <!-- WEB予約ボタン -->
+        <button
+          class="flex items-center gap-2 px-8 py-4 bg-[var(--green)] text-[var(--white)] rounded-lg font-medium shadow-sm hover:opacity-90 transition-opacity"
+        >
+          <img
+            src="./assets/images/computer.png"
+            alt="WEB予約"
+            class="w-5 h-5"
+          />
+          <span>WEB予約はこちら</span>
+        </button>
+
+        <!-- 電話ボタン -->
+        <button
+          class="flex items-center gap-2 px-8 py-4 bg-[var(--white)] text-[var(--green)] rounded-lg font-medium shadow-sm border border-gray-200 hover:bg-gray-50 transition-colors"
+        >
+          <img src="./assets/images/call_3.png" alt="電話" class="w-5 h-5" />
+          <span>000-000-0000</span>
+        </button>
       </div>
     </section>
 
@@ -363,11 +643,11 @@
         <div
           class="flex items-center space-x-3 text-xl text-white font-light tracking-[.15em]"
         >
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"
-            />
-          </svg>
+          <img
+            src="./assets/images/call.png"
+            alt="call"
+            class="object-contain"
+          />
           <span>000-000-0000</span>
         </div>
       </div>
