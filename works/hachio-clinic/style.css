@@ -1,0 +1,42 @@
+:root {
+  /* 基本カラーパレット */
+  --brown-dark: #423734;
+  --beige: #c8c0b2;
+  --gray-light: #f5f5f5;
+  --green: #174b4c;
+  --white: #ffffff;
+  --cream: #f7f6f4;
+  --black: #000000;
+  --blue-black: #0a1818;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 32px;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--green);
+  letter-spacing: 0.3rem;
+}
+
+.section-description {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--blue-black);
+  letter-spacing: 0.3rem;
+  line-height: 40px;
+}
