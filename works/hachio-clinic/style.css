@@ -7,8 +7,17 @@
   --green: #174b4c;
   --white: #ffffff;
   --cream: #f7f6f4;
+  --orange: #e89528;
   --black: #000000;
   --blue-black: #0a1818;
+
+  /* グリーン系バリエーション */
+  --green-teal: #226b54;
+  --green-slate: #22536b;
+  --green-cyan: #226a6b;
+  --green-forest: #3f7351;
+  --green-navy: #3d5787;
+  --green-sage: #466a6b;
 }
 
 body {
@@ -42,17 +51,158 @@ body {
   line-height: 40px;
 }
 
-.faq-container {
-  border: 2px solid var(--gray-light);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+/* ===== 受診メリット ===== */
+.merit-container {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  margin: -50px auto 0px auto;
 }
 
+.merit-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 770px;
+  height: 720px;
+  border: 20px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.merit-circle {
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 12px 0px 30px 0px;
+  color: white;
+  gap: 16px;
+}
+
+.merit-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.merit-title {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  letter-spacing: 0.15em;
+  margin: 0;
+}
+
+.merit-description {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 24px;
+  letter-spacing: 0.18em;
+  margin: 0;
+}
+
+.merit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 3; /* 白い円より前面に */
+}
+
+.merit-center-icon {
+  width: auto;
+  height: auto;
+}
+
+.merit-center-text {
+  position: relative;
+  display: inline-block;
+}
+
+.merit-title-text {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 60px;
+  letter-spacing: 0.24em;
+  color: var(--black);
+  position: relative;
+  z-index: 1;
+  bottom: 38px;
+}
+
+.merit-underline {
+  background-color: var(--orange);
+  height: 20px;
+  width: 115%;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0px;
+  left: 48%;
+  transform: translateX(-50%);
+  top: 4px;
+}
+
+.merit-circle:nth-child(2) {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.merit-circle:nth-child(3) {
+  position: absolute;
+  top: 170px;
+  right: 0px;
+}
+
+.merit-circle:nth-child(4) {
+  position: absolute;
+  bottom: 170px;
+  right: 0px;
+}
+
+.merit-circle:nth-child(5) {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.merit-circle:nth-child(6) {
+  position: absolute;
+  bottom: 170px;
+  left: 0px;
+}
+
+.merit-circle:nth-child(7) {
+  position: absolute;
+  top: 170px;
+  left: 0px;
+}
+
+/* ===== 人間ドック内容・料金 ===== */
 .card-container {
   border: 2px solid var(--gray);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--white);
+}
+
+/* ===== よくある質問 ===== */
+.faq-container {
+  border: 2px solid var(--gray-light);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
