@@ -253,6 +253,44 @@
       </div>
     </nav>
 
+    <!-- ヒーローセクション -->
+    <section id="hero" class="">
+      <!-- 右側 -->
+      <!-- CTAボタン -->
+      <div
+        class="flex flex-row content-center justify-center items-center gap-6"
+      >
+        <!-- WEB予約ボタン -->
+        <button
+          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--green)] text-[var(--white)] rounded-lg shadow-md"
+        >
+          <img
+            src="./assets/images/computer.png"
+            alt="WEB予約"
+            class="w-6 h-6"
+          />
+          <span class="font-normal text-xl tracking-[.25em]"
+            >WEB予約はこちら</span
+          >
+        </button>
+
+        <!-- 電話ボタン -->
+        <button
+          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--white)] text-[var(--green)] rounded-lg shadow-md"
+        >
+          <img src="./assets/images/call_3.png" alt="電話" class="w-6 h-6" />
+          <span class="font-normal text-xl tracking-[.25em]">000-000-0000</span>
+        </button>
+      </div>
+
+      <!-- 左側 -->
+      <div class="text-center text-2xl font-bold tracking-[.3em] pt-10 pb-8">
+        人間ドックは、今の自分と未来の自分への投資です。<br />
+        半日を使って、これからの時間を守りましょう。
+      </div>
+    </section>
+
+    <!-- 受診メリット -->
     <section id="merit" class="bg-[var(--cream)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -276,7 +314,11 @@
       </div>
     </section>
 
-    <section id="fee" class="bg-[var(--white)]">
+    <!-- 人間ドック内容・料金 -->
+    <section
+      id="fee"
+      class="bg-[var(--white)] pt-0 px-24 pb-12 flex flex-col justify-center gap-5"
+    >
       <!-- セクションタイトル -->
       <div class="section-header">
         <div class="section-title">
@@ -292,12 +334,436 @@
         </p>
       </div>
 
+      <!-- ボタン群 -->
+      <div class="flex gap-4 justify-between w-full">
+        <button
+          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
+        >
+          スタンダード
+        </button>
+        <button
+          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
+        >
+          胸部CT
+        </button>
+        <button
+          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
+        >
+          消化器
+        </button>
+        <button
+          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
+        >
+          脳ドック
+        </button>
+        <button
+          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
+        >
+          特別
+        </button>
+      </div>
+
+      <!-- 注意文言 -->
+      <div class="text-center">
+        <p class="text-2xl font-normal leading-[38px] tracking-[0.15em]">
+          上記のボタンからコースの詳細が確認できます。<br />所要時間は目安です。診療状況により前後する可能性がございます。
+        </p>
+      </div>
+
       <!-- セクションコンテンツ -->
-      <div class="text-center text-2xl font-normal tracking-[.3em] pt-10 pb-8">
-        上記のボタンからコースの詳細が確認できます。<br />
-        所要時間は目安です。診療状況により前後する可能性がございます。
+
+      <!-- スタンダードコース -->
+      <div id="standard" class="card-container">
+        <!-- カードヘッダー -->
+        <div class="p-8 px-16 flex flex-col items-center">
+          <div class="flex items-center gap-6 mb-6">
+            <img src="./assets/images/favorite.png" alt="お気に入りアイコン" />
+            <h3
+              class="text-[28px] font-bold leading-10 tracking-[0.25em] text-[var(--green)]"
+            >
+              スタンダードコース
+            </h3>
+          </div>
+          <p class="text-2xl font-normal leading-10 tracking-[0.15em]">
+            一般的なコースです。
+          </p>
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="flex flex-col gap-3 pb-8 px-10">
+          <!-- 主な検査内容 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >主な検査内容</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                診察、身体計測（身長・体重・BMI・腹囲）、視力・聴力、眼底・眼圧、血圧・心電図、胸部X線、腹部超音波、尿検査（蛋白・糖・潜血）、便潜血（2日法）、血液検査（肝機能・腎機能・脂質・糖代謝・炎症反応）、腫瘍マーカー（男性：PSA／女性：CA125）、胃部X線（バリウム）
+              </p>
+            </div>
+          </div>
+
+          <!-- 所要時間 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >所要時間</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                約3時間
+              </p>
+            </div>
+          </div>
+
+          <!-- 料金（税込） -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >料金（税込）</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                50,000円
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 胸部CTコース -->
+      <div id="chestCT" class="card-container">
+        <!-- カードヘッダー -->
+        <div class="p-8 px-16 flex flex-col items-center">
+          <div class="flex items-center gap-6 mb-6">
+            <img src="./assets/images/pulmonology.png" alt="pulmonology" />
+            <h3
+              class="text-[28px] font-bold leading-10 tracking-[0.25em] text-[var(--green)]"
+            >
+              胸部CTコース
+            </h3>
+          </div>
+          <p class="text-2xl font-normal leading-10 tracking-[0.15em]">
+            スタンダードコースに胸部CTをプラスしたコースです。
+          </p>
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="flex flex-col gap-3 pb-8 px-10">
+          <!-- 主な検査内容 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >主な検査内容</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                スタンダードコース＋胸部CT、腫瘍マーカー追加（CEA）
+              </p>
+            </div>
+          </div>
+
+          <!-- 所要時間 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >所要時間</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                約3時間
+              </p>
+            </div>
+          </div>
+
+          <!-- 料金（税込） -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >料金（税込）</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                59,000円
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 消化器コース -->
+      <div id="digestiveSystem" class="card-container">
+        <!-- カードヘッダー -->
+        <div class="p-8 px-16 flex flex-col items-center">
+          <div class="flex items-center gap-6 mb-6">
+            <img
+              src="./assets/images/gastroenterology.png"
+              alt="gastroenterology"
+            />
+            <h3
+              class="text-[28px] font-bold leading-10 tracking-[0.25em] text-[var(--green)]"
+            >
+              消化器コース
+            </h3>
+          </div>
+          <p class="text-2xl font-normal leading-10 tracking-[0.15em]">
+            スタンダードコースに胃・大腸の内視鏡検査をプラスしたコースです。
+          </p>
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="flex flex-col gap-3 pb-8 px-10">
+          <!-- 主な検査内容 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >主な検査内容</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                スタンダードコース（胃部検査を内視鏡に変更）＋大腸内視鏡（ポリープ切除可能）
+              </p>
+            </div>
+          </div>
+
+          <!-- 所要時間 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >所要時間</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                約6時間
+              </p>
+            </div>
+          </div>
+
+          <!-- 料金（税込） -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >料金（税込）</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                59,000円
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 脳ドックコース -->
+      <div id="brainCheckup" class="card-container">
+        <!-- カードヘッダー -->
+        <div class="p-8 px-16 flex flex-col items-center">
+          <div class="flex items-center gap-6 mb-6">
+            <img src="./assets/images/neurology.png" alt="neurology.png" />
+            <h3
+              class="text-[28px] font-bold leading-10 tracking-[0.25em] text-[var(--green)]"
+            >
+              脳ドックコース
+            </h3>
+          </div>
+          <p class="text-2xl font-normal leading-10 tracking-[0.15em]">
+            基本的な検査項目に頭部MRI・MRA検査を追加したコースです。
+          </p>
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="flex flex-col gap-3 pb-8 px-10">
+          <!-- 主な検査内容 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >主な検査内容</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                診察、身体計測、血圧・心電図、胸部X線、尿・便潜血、血液検査、頭部MRI・MRA（3.0テスラ）、頸動脈エコー
+              </p>
+            </div>
+          </div>
+
+          <!-- 所要時間 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >所要時間</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                約4時間
+              </p>
+            </div>
+          </div>
+
+          <!-- 料金（税込） -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >料金（税込）</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                48,000円
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 特別コース -->
+      <div id="special" class="card-container">
+        <!-- カードヘッダー -->
+        <div class="p-8 px-16 flex flex-col items-center">
+          <div class="flex items-center gap-6 mb-6">
+            <img src="./assets/images/heart_plus.png" alt="heart_plus.png" />
+            <h3
+              class="text-[28px] font-bold leading-10 tracking-[0.25em] text-[var(--green)]"
+            >
+              特別コース
+            </h3>
+          </div>
+          <p class="text-2xl font-normal leading-10 tracking-[0.15em]">
+            基本的な検査項目にオプションを追加した特別なコースです。
+          </p>
+        </div>
+
+        <!-- カードコンテンツ -->
+        <div class="flex flex-col gap-3 pb-8 px-10">
+          <!-- 主な検査内容 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >主な検査内容</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                胸部CTコース＋動脈硬化度検査、腹部CT、骨密度測定、腫瘍マーカー追加（CA19-9、CYFRA、ProGRP）
+              </p>
+            </div>
+          </div>
+
+          <!-- 所要時間 -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >所要時間</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                約3時間
+              </p>
+            </div>
+          </div>
+
+          <!-- 料金（税込） -->
+          <div class="flex items-start p-6">
+            <div class="w-[200px] flex-shrink-0">
+              <span
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+                >料金（税込）</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[20px] font-bold leading-6 tracking-[0.25em] text-[var(--black)]"
+              >
+                93,000円
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTAボタン -->
+      <div
+        class="flex flex-row content-center justify-center items-center gap-6 pt-10"
+      >
+        <!-- WEB予約ボタン -->
+        <button
+          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--green)] text-[var(--white)] rounded-lg shadow-md"
+        >
+          <img
+            src="./assets/images/computer.png"
+            alt="WEB予約"
+            class="w-6 h-6"
+          />
+          <span class="font-normal text-xl tracking-[.25em]"
+            >WEB予約はこちら</span
+          >
+        </button>
+
+        <!-- 電話ボタン -->
+        <button
+          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--white)] text-[var(--green)] rounded-lg shadow-md"
+        >
+          <img src="./assets/images/call_3.png" alt="電話" class="w-6 h-6" />
+          <span class="font-normal text-xl tracking-[.25em]">000-000-0000</span>
+        </button>
       </div>
     </section>
+
+    <!-- 人間ドックの流れ -->
     <section id="flow" class="bg-[var(--cream)]">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -321,6 +787,7 @@
       </div>
     </section>
 
+    <!-- よくある質問 -->
     <section id="faq" class="bg-[var(--white)] px-[96px] pb-12">
       <!-- セクションタイトル -->
       <div class="section-header">
@@ -493,6 +960,7 @@
       </div>
     </section>
 
+    <!-- ご予約 -->
     <section id="reserve" class="bg-[var(--cream)] pb-16">
       <!-- セクションタイトル -->
       <div class="section-header">
