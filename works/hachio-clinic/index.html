@@ -284,10 +284,6 @@
       </div>
 
       <!-- 左側 -->
-      <div class="text-center text-2xl font-bold tracking-[.3em] pt-10 pb-8">
-        人間ドックは、今の自分と未来の自分への投資です。<br />
-        半日を使って、これからの時間を守りましょう。
-      </div>
     </section>
 
     <!-- 受診メリット -->
@@ -415,54 +411,61 @@
       class="bg-[var(--white)] pt-0 px-24 pb-12 flex flex-col justify-center gap-5"
     >
       <!-- セクションタイトル -->
-      <div class="section-header">
-        <div class="section-title">
-          <img
-            src="./assets/images/receipt_long.png"
-            alt="receipt_long"
-            class="object-contain"
-          />
-          <h1 class="">人間ドック内容・料金</h1>
+      <div class="flex flex-col gap-y-7 pb-7">
+        <div class="section-header">
+          <div class="section-title">
+            <img
+              src="./assets/images/receipt_long.png"
+              alt="receipt_long"
+              class="object-contain"
+            />
+            <h1 class="">人間ドック内容・料金</h1>
+          </div>
+          <p class="section-description">
+            さまざまなコースをご用意しています。<br />※人間ドックは自費診療となります。
+          </p>
         </div>
-        <p class="section-description">
-          さまざまなコースをご用意しています。<br />※人間ドックは自費診療となります。
-        </p>
-      </div>
 
-      <!-- ボタン群 -->
-      <div class="flex gap-4 justify-between w-full">
-        <button
-          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
-        >
-          スタンダード
-        </button>
-        <button
-          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
-        >
-          胸部CT
-        </button>
-        <button
-          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
-        >
-          消化器
-        </button>
-        <button
-          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
-        >
-          脳ドック
-        </button>
-        <button
-          class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1"
-        >
-          特別
-        </button>
-      </div>
+        <!-- ボタン群 -->
+        <div class="flex gap-4 justify-between w-full">
+          <a
+            href="#standard"
+            class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1 text-center text-xl tracking-[0.35em]"
+          >
+            スタンダード
+          </a>
+          <a
+            href="#chestCT"
+            class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1 text-center text-xl tracking-[0.35em]"
+          >
+            胸部CT
+          </a>
+          <a
+            href="#digestiveSystem"
+            class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1 text-center text-xl tracking-[0.35em]"
+          >
+            消化器
+          </a>
+          <a
+            href="#brainCheckup"
+            class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1 text-center text-xl tracking-[0.35em]"
+          >
+            脳ドック
+          </a>
+          <a
+            href="#special"
+            class="bg-[var(--green)] text-[var(--white)] rounded-lg py-4 px-6 shadow-md flex-1 text-center text-xl tracking-[0.35em]"
+          >
+            特別
+          </a>
+        </div>
 
-      <!-- 注意文言 -->
-      <div class="text-center">
-        <p class="text-2xl font-normal leading-[38px] tracking-[0.15em]">
-          上記のボタンからコースの詳細が確認できます。<br />所要時間は目安です。診療状況により前後する可能性がございます。
-        </p>
+        <!-- 注意文言 -->
+        <div class="text-center">
+          <p class="text-2xl font-normal leading-[38px] tracking-[0.15em]">
+            上記のボタンからコースの詳細が確認できます。<br />所要時間は目安です。診療状況により前後する可能性がございます。
+          </p>
+        </div>
       </div>
 
       <!-- セクションコンテンツ -->
