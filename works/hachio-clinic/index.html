@@ -254,36 +254,169 @@
     </nav>
 
     <!-- ヒーローセクション -->
-    <section id="hero" class="">
-      <!-- 右側 -->
-      <!-- CTAボタン -->
-      <div
-        class="flex flex-row content-center justify-center items-center gap-6"
-      >
-        <!-- WEB予約ボタン -->
-        <button
-          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--green)] text-[var(--white)] rounded-lg shadow-md"
-        >
-          <img
-            src="./assets/images/computer.png"
-            alt="WEB予約"
-            class="w-6 h-6"
-          />
-          <span class="font-normal text-xl tracking-[.25em]"
-            >WEB予約はこちら</span
+    <section id="hero" class="min-h-screen flex">
+      <div class="flex w-full">
+        <!-- 左側コンテンツ -->
+        <div class="hero-left w-1/2 text-center pt-6 pb-8 hero-bg pl-[140px]">
+          <div
+            class="gap-6 flex flex-col justify-center"
+            style="height: -webkit-fill-available"
           >
-        </button>
+            <div class="gap-4 flex flex-col justify-center">
+              <!-- メインキャッチコピー -->
+              <div class="hero-title">
+                <h1
+                  class="leading-[60px] text-[var(--green)] tracking-[0.12em] font-serif"
+                  style="text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3)"
+                >
+                  <span class="relative">
+                    <span class="text-[52px] font-bold relative z-[2]"
+                      >半日</span
+                    ><span class="text-[32px] font-bold relative z-[2]"
+                      >の人間ドック</span
+                    >
+                    <div
+                      class="absolute bottom-[-5px] left-0 w-full h-4 bg-[#F5E479] rounded z-[1] shadow-sm"
+                    ></div>
+                  </span>
+                  <span class="text-[32px] font-bold relative z-[2]">で、</span
+                  ><br />
+                  <span class="relative">
+                    <span class="text-[32px] font-bold relative z-[2]"
+                      >これからの</span
+                    ><span class="text-[52px] font-bold relative z-[2]"
+                      >毎日</span
+                    >
+                    <div
+                      class="absolute bottom-[-5px] left-0 w-full h-4 bg-[#F5E479] rounded z-[1] shadow-sm"
+                    ></div>
+                  </span>
+                  <span class="text-[32px] font-bold relative z-[2]"
+                    >を守る。</span
+                  >
+                </h1>
+              </div>
 
-        <!-- 電話ボタン -->
-        <button
-          class="flex items-center gap-x-8 px-8 py-4 bg-[var(--white)] text-[var(--green)] rounded-lg shadow-md"
-        >
-          <img src="./assets/images/call_3.png" alt="電話" class="w-6 h-6" />
-          <span class="font-normal text-xl tracking-[.25em]">000-000-0000</span>
-        </button>
+              <!-- サブテキスト -->
+              <p
+                class="text-[20px] text-[var(--brown-dark)] font-serif leading-[20px] tracking-[0.13em]"
+              >
+                生活習慣病やがんの早期発見に。
+              </p>
+            </div>
+
+            <!-- 3つの緑バナー -->
+            <div class="flex gap-4 justify-center">
+              <div class="flag-container">
+                <img
+                  src="./assets/images/flag.svg"
+                  alt="フラッグ"
+                  class="flag-image"
+                />
+                <div class="flag-text font-serif">
+                  <div
+                    class="text-[13px] font-semibold leading-[30px] tracking-[0.17em]"
+                  >
+                    病気の
+                  </div>
+                  <div
+                    class="text-[16px] font-black leading-[30px] tracking-[0.11em]"
+                  >
+                    早期発見
+                  </div>
+                </div>
+              </div>
+              <div class="flag-container">
+                <img
+                  src="./assets/images/flag.svg"
+                  alt="フラッグ"
+                  class="flag-image"
+                />
+                <div class="flag-text font-serif">
+                  <div
+                    class="text-[16px] font-black leading-[30px] tracking-[0.11em]"
+                  >
+                    時間効率
+                  </div>
+                </div>
+              </div>
+              <div class="flag-container">
+                <img
+                  src="./assets/images/flag.svg"
+                  alt="フラッグ"
+                  class="flag-image"
+                />
+                <div class="flag-text font-serif">
+                  <div
+                    class="text-[13px] font-semibold leading-[30px] tracking-[0.17em]"
+                  >
+                    総合的な
+                  </div>
+                  <div
+                    class="text-[16px] font-black leading-[30px] tracking-[0.11em]"
+                  >
+                    健康確認
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- CTAボタン -->
+            <div class="flex flex-col items-center gap-y-3">
+              <div class="">
+                <!-- 画像 -->
+                <div class="flex justify-center relative bottom-[-20px] z-[3]">
+                  <img
+                    src="./assets/images/cta_contact.svg"
+                    alt="お問い合わせ"
+                    class="w-auto h-auto"
+                  />
+                </div>
+
+                <!-- WEB予約ボタン -->
+                <button
+                  class="w-full relative flex flex-col items-center justify-center gap-x-8 px-8 py-4 bg-[var(--green)] text-[var(--white)] rounded-lg shadow-md"
+                >
+                  <img
+                    src="./assets/images/computer.png"
+                    alt="WEB予約"
+                    class="absolute left-4 w-6 h-6 z-10"
+                  />
+                  <span
+                    class="font-normal text-xl tracking-[.25em] relative z-20"
+                    >WEB予約はこちら</span
+                  >
+                </button>
+              </div>
+
+              <div class="">
+                <!-- 電話ボタン -->
+                <button
+                  class="w-full flex items-center justify-center gap-x-8 px-8 py-4 bg-[var(--white)] text-[var(--green)] rounded-lg shadow-md"
+                >
+                  <img
+                    src="./assets/images/call_3.png"
+                    alt="電話"
+                    class="w-6 h-6"
+                  />
+                  <span class="font-normal text-xl tracking-[.25em]"
+                    >000-000-0000</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 右側画像 -->
+        <div class="hero-right w-1/2">
+          <img
+            src="./assets/images/hero.png"
+            alt="散歩するカップル"
+            class="w-full h-screen object-cover"
+          />
+        </div>
       </div>
-
-      <!-- 左側 -->
     </section>
 
     <!-- 受診メリット -->
