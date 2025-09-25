@@ -30,17 +30,18 @@ body {
 .section-header {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 12px;
   align-items: center;
   justify-content: center;
-  padding: 64px 32px;
+  padding-bottom: 32px;
+  padding-top: 40px;
 }
 
 .section-title {
   display: flex;
   flex-direction: row;
-  gap: 24px;
-  font-size: 40px;
+  gap: 12px;
+  font-size: 32px;
   font-weight: bold;
   color: var(--green);
   letter-spacing: 0.3rem;
@@ -48,10 +49,10 @@ body {
 
 .section-description {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: normal;
   color: var(--blue-black);
-  letter-spacing: 0.3rem;
-  line-height: 40px;
+  letter-spacing: 0.15rem;
+  line-height: 32px;
   text-align: center;
 }
 
@@ -96,8 +97,8 @@ body {
 .merit-container {
   position: relative;
   width: 1000px;
-  height: 1000px;
-  margin: -50px auto 0px auto;
+  height: 700px;
+  margin: 0px auto;
 }
 
 .merit-container::before {
@@ -105,17 +106,17 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 770px;
-  height: 720px;
-  border: 20px solid white;
+  width: 630px;
+  height: 610px;
+  border: 16px solid white;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
 }
 
 .merit-circle {
-  width: 290px;
-  height: 290px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -124,26 +125,26 @@ body {
   text-align: center;
   padding: 12px 0px 30px 0px;
   color: white;
-  gap: 16px;
+  gap: 14px;
 }
 
 .merit-icon {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .merit-title {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
-  line-height: 32px;
+  line-height: 24px;
   letter-spacing: 0.15em;
   margin: 0;
 }
 
 .merit-description {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 24px;
+  line-height: 20px;
   letter-spacing: 0.18em;
   margin: 0;
 }
@@ -161,7 +162,7 @@ body {
 }
 
 .merit-center-icon {
-  width: auto;
+  width: 180px;
   height: auto;
 }
 
@@ -171,7 +172,7 @@ body {
 }
 
 .merit-title-text {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: bold;
   line-height: 60px;
   letter-spacing: 0.24em;
@@ -190,45 +191,45 @@ body {
   bottom: 0px;
   left: 48%;
   transform: translateX(-50%);
-  top: 4px;
+  top: 0px;
 }
 
 .merit-circle:nth-child(2) {
   position: absolute;
-  top: 40px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .merit-circle:nth-child(3) {
   position: absolute;
-  top: 170px;
-  right: 0px;
+  top: 100px;
+  right: 80px;
 }
 
 .merit-circle:nth-child(4) {
   position: absolute;
-  bottom: 170px;
-  right: 0px;
+  bottom: 100px;
+  right: 80px;
 }
 
 .merit-circle:nth-child(5) {
   position: absolute;
-  bottom: 40px;
+  bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .merit-circle:nth-child(6) {
   position: absolute;
-  bottom: 170px;
-  left: 0px;
+  bottom: 100px;
+  left: 80px;
 }
 
 .merit-circle:nth-child(7) {
   position: absolute;
-  top: 170px;
-  left: 0px;
+  top: 100px;
+  left: 80px;
 }
 
 /* ===== 人間ドック内容・料金 ===== */
@@ -238,6 +239,8 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   background-color: var(--white);
+  width: 100%;
+  max-width: 85%;
 }
 
 /* ===== 人間ドックの流れ ===== */
@@ -288,23 +291,22 @@ body {
   padding: 16px 24px;
   background-color: var(--white);
   display: flex;
-  gap: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
 
 .step-title {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
-  letter-spacing: 0.3rem;
-  line-height: 40px;
+  letter-spacing: 0.15rem;
+  line-height: 32px;
 }
 
 .step-description {
-  font-size: 24px;
-  letter-spacing: 0.15rem;
-  line-height: 38px;
+  font-size: 18px;
+  letter-spacing: 0.12rem;
+  line-height: 32px;
 }
 
 /* ===== よくある質問 ===== */
@@ -313,4 +315,5 @@ body {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 75%;
 }
