@@ -1,95 +1,340 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>医療特化LPデザイン | ポートフォリオ</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>allcamo | LP・HP・バナー制作</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./loading/loading.css" />
+    <script src="./loading/loading.js"></script>
+    <script src="./main.js"></script>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png" />
+    <!-- Masonry.js CDN -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   </head>
   <body>
+    <!-- ローディング画面 -->
+    <div id="loading-overlay">
+      <div class="loading-container">
+        <svg
+          width="187"
+          height="220"
+          viewBox="0 0 187 220"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <radialGradient id="bulb-light">
+              <stop
+                offset="0%"
+                style="stop-color: #ffe4b5; stop-opacity: 0.8"
+              />
+              <stop
+                offset="50%"
+                style="stop-color: #ffd700; stop-opacity: 0.4"
+              />
+              <stop
+                offset="100%"
+                style="stop-color: #ffd700; stop-opacity: 0"
+              />
+            </radialGradient>
+          </defs>
+          <ellipse
+            id="bulb-glow"
+            cx="93"
+            cy="90"
+            rx="70"
+            ry="80"
+            fill="url(#bulb-light)"
+          />
+          <path
+            id="path1"
+            d="M64.4179 154.5C67.7512 154.167 73.9407 153 73.9407 138C73.9407 128 74.4407 113.5 52.9174 89.5C47.5894 84 51.1174 72.6 71.9174 81C92.7174 89.4 100.917 100.833 102.417 105.5C105.545 112.333 102.417 128.5 87.9192 122C81.5859 117.667 76.9209 99.0001 118.921 81C130.589 76 144.441 76.5 135.936 89.5C126.947 103.241 112.44 113 114.417 138C114.681 141.327 117.919 146.5 122.919 146"
+          />
+          <path
+            id="path2"
+            d="M57.8663 155.033C47.5262 155.033 9.67482 130.591 2.71187 90.9355C-0.596986 72.0909 7.71018 42.5909 19.7095 32.0909"
+          />
+          <path
+            id="path3"
+            d="M81.7059 183.76C87.2059 178.748 106.198 168.68 120.941 173.091C128.992 175.5 127.992 185.26 120.941 186.091C108.205 187.591 79.5276 183.924 69.2024 181.591C69.2024 181.591 63.2056 179.591 63.2056 174.591C63.2056 170.266 67.6925 168.934 68.904 168.653C69.1033 168.607 69.2907 168.594 69.4952 168.601C72.7531 168.704 102.452 169.428 120.941 162.271C152.995 149.863 177.487 127.115 184.085 90.9355C190.684 54.7559 172.075 2 94.0137 2C78.2131 2 65.2131 3.59088 45.7131 12.9993M90.2056 199.996C102.206 194.496 115.994 188.491 118.206 196.091C120.97 205.591 87.8876 201.303 81.2056 197.591C75.424 194.379 74.796 192.271 78.4922 188M94.2063 218.091C100.54 217.258 109.706 213.691 105.706 208.091C100.706 201.091 91.2063 214.091 85.2056 209.591C82.5003 207.562 83.9922 204 86.4922 202.5"
+          />
+        </svg>
+        <div class="loading-text">
+          <span>L</span><span>O</span><span>A</span><span>D</span><span>I</span
+          ><span>N</span><span>G</span>
+        </div>
+      </div>
+    </div>
+
     <header class="site-header">
       <div class="container">
-        <h1 class="brand">医療特化LPデザイン</h1>
         <nav class="nav">
-          <a href="#works">実績</a>
-          <a href="#process">進め方</a>
-          <a href="#about">プロフィール</a>
-          <a href="#contact">お問い合わせ</a>
+          <a href="#top">TOP</a>
+          <a href="#works">WORKS</a>
+          <a href="#about">ABOUT</a>
+          <a href="#contact">CONTACT</a>
         </nav>
+        <hr class="gradient-line" />
       </div>
     </header>
 
-    <section class="hero">
+    <section class="top">
       <div class="container">
-        <h2>元看護師 × エンジニア<br />医療分野に強いLP制作</h2>
-        <p class="lead">
-          採用・集客に直結する構成と、医療広告ガイドラインに配慮したコピーで成果につながるLPをご提案します。
+        <img
+          src="./assets/images/allcamo_logo.png"
+          alt="allcamo_logo"
+          class="allcamo_logo"
+        />
+        <p class="hero_text">
+          IT・医療などの分野での業務経験を活かして<br />ユーザー視点のわかりやすいデザイン制作を行っています。
         </p>
-        <a class="btn" href="#works">作品を見る</a>
       </div>
     </section>
 
-    <section id="works" class="section">
+    <section id="works" class="works">
       <div class="container">
-        <!-- 医療系 -->
-        <h4>医療系</h4>
-        <div class="grid">
-          <a class="card" href="works/tsubasa-nurse.html"
-            >つばさ訪問看護ステーション｜採用LP</a
-          >
-          <a class="card" href="works/aragishi-dental/index.html"
-            >新岸歯科クリニック｜受診促進LP</a
-          >
-          <a class="card" href="works/hachio-clinic/index.html"
-            >八尾内科クリニック｜受診促進LP</a
-          >
+        <div class="section-title">
+          <p>WORKS</p>
+          <hr class="gradient-line" />
         </div>
 
-        <!-- 美容系 -->
-        <h4 style="margin-top: 40px">美容系</h4>
-        <div class="grid">
-          <a class="card" href="works/beauty-facial.html"
-            >美容（フェイシャル）LP</a
-          >
+        <!-- フィルターボタン -->
+        <div class="filter-section">
+          <div class="filter-label">
+            制作物
+            <div class="filter-buttons">
+              <button class="button button-secondary" data-type="all">
+                全て
+              </button>
+              <button class="button button-secondary" data-type="lp">
+                LP・HP
+              </button>
+              <button class="button button-secondary" data-type="banner">
+                バナー
+              </button>
+              <button class="button button-secondary" data-type="other">
+                その他
+              </button>
+            </div>
+          </div>
+
+          <div class="filter-label">
+            ジャンル
+            <div class="filter-buttons">
+              <button class="button button-secondary" data-genre="all">
+                全て
+              </button>
+              <button class="button button-secondary" data-genre="medical">
+                医療
+              </button>
+              <button class="button button-secondary" data-genre="beauty">
+                美容
+              </button>
+              <button class="button button-secondary" data-genre="women">
+                女性向け
+              </button>
+              <button class="button button-secondary" data-genre="other">
+                その他
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 作品グリッド -->
+        <div class="works-grid"></div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-title">
+          <p>ABOUT</p>
+          <hr class="gradient-line" />
+        </div>
+        <!-- allcamoについて -->
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-section">
+              <h3 class="about-heading">allcamoについて</h3>
+              <p class="about-message">
+                「allcamo（あるかも）」は、可能性を信じるデザインを提供するブランドです。<br /><br />
+                「こうすれば上手くいくかも」「これなら伝わるかも」という小さな閃きを大切にし、
+                クライアント様のビジネスに新しい可能性をもたらすデザインを目指しています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- 自己紹介 -->
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-section">
+              <h3 class="about-heading">自己紹介</h3>
+              <p class="about-message">
+                LPとバナー制作を中心に活動しているWebデザイナーです。<br />ユーザー導線を意識した、成果につながるデザインを心がけています。<br /><br />
+                医療系を中心に、様々な業種のクライアント様とお仕事をさせていただいています。<br />
+                現役エンジニアとしての知見を活かし、実装を見据えたデザイン提案が可能です。
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- 略歴 -->
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-section">
+              <h3 class="about-heading">略歴</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <div class="about-timeline">2019年3月</div>
+                  <div class="about-timeline">看護学部看護学科を卒業</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="about-timeline">2019年4月</div>
+                  <div class="about-timeline">看護師として病院に勤務</div>
+                </div>
+                <div class="timeline-item">
+                  <div class="about-timeline">2023年8月</div>
+                  <div class="about-timeline">
+                    WEB開発の会社でシステムエンジニアとして従事
+                  </div>
+                </div>
+                <div class="timeline-item">
+                  <div class="about-timeline">2025年6月</div>
+                  <div class="about-timeline">WEB制作の業務を開始</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 使用ツール -->
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-section">
+              <h3 class="about-heading">使用ツール</h3>
+              <div class="tools">
+                <a class="tool">Figma</a>
+                <a class="tool">Canva</a>
+                <a class="tool">HTML / CSS</a>
+                <a class="tool">JavaScript</a>
+                <a class="tool">PHP</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 得意分野 -->
+        <div class="about-content">
+          <div class="about-card">
+            <div class="about-section">
+              <h3 class="about-heading">得意分野</h3>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <img src="./assets/images/list_icon.svg" alt="list-icon" />
+                  医療系LP・バナー制作
+                </div>
+                <div class="feature-item">
+                  <img src="./assets/images/list_icon.svg" alt="list-icon" />
+                  ユーザー導線設計
+                </div>
+                <div class="feature-item">
+                  <img src="./assets/images/list_icon.svg" alt="list-icon" />
+                  レスポンシブデザイン
+                </div>
+                <div class="feature-item">
+                  <img src="./assets/images/list_icon.svg" alt="list-icon" />
+                  実装を見据えたデザイン
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="process" class="section alt">
+    <section id="contact" class="contact">
       <div class="container">
-        <h3>進め方</h3>
-        <ol>
-          <li>ヒアリング</li>
-          <li>構成案</li>
-          <li>デザイン</li>
-          <li>実装</li>
-          <li>改善提案</li>
-        </ol>
-      </div>
-    </section>
+        <div class="section-title">
+          <p>CONTACT</p>
+          <hr class="gradient-line" />
+        </div>
 
-    <section id="about" class="section">
-      <div class="container">
-        <h3>プロフィール</h3>
-        <p>
-          看護師として病院勤務を経て、現在はエンジニア／デザイナー。医療現場の理解を活かし、患者・求職者心理に沿った情報設計が得意です。
-        </p>
-      </div>
-    </section>
+        <div class="contact-content">
+          <!-- フォームカード -->
+          <div class="contact-card">
+            <h3 class="contact-heading">連絡フォーム</h3>
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
+              <div class="form-group">
+                <label for="name">お名前 *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <h3>お問い合わせ</h3>
-        <p>
-          ご相談は
-          <a href="mailto:yourmail@example.com">メール</a> にて承ります。
-        </p>
+              <div class="form-group">
+                <label for="email">メールアドレス *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">件名 *</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">お問い合わせ内容 *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="button button-primary">
+                送信する
+              </button>
+            </form>
+          </div>
+
+          <!-- メール・SNS -->
+          <div class="contact-card">
+            <div class="contact-section">
+              <h3 class="contact-heading">メール</h3>
+              <p class="contact-email">nishimura.h.119@gmail.com</p>
+
+              <h3 class="contact-heading">SNS</h3>
+              <div class="sns-buttons">
+                <a
+                  href="https://x.com/U2Gzn2Jcff72661"
+                  class="button button-secondary sns-button"
+                  >X(旧Twitter)</a
+                >
+                <a
+                  href="https://www.instagram.com/hinananata.n/?locale=ja_JP"
+                  class="button button-secondary sns-button"
+                  >Instagram</a
+                >
+                <a
+                  href="https://note.com/allucamo"
+                  class="button button-secondary sns-button"
+                  >note</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <footer class="site-footer">
+      <hr class="gradient-line" />
       <div class="container">
-        <small>&copy; 2025 Portfolio</small>
+        <div class="brand-name">
+          allcamo<br />
+          <p>-あるかも-</p>
+        </div>
+        <div class="copy"><small>&copy; 2025 All rights reserved.</small></div>
       </div>
     </footer>
   </body>

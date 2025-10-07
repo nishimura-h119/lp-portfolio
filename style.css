@@ -1,0 +1,644 @@
+/* ===== 共通 ===== */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kameron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;500;700&display=swap");
+
+:root {
+  /* 基本カラーパレット */
+  --brown-dark: #493234;
+  --brown-light: #a39899;
+  --brown-medium: #746768;
+  --brown-darker: #5c5454;
+  --brown-pink: #cc9483;
+  --gray: #eaebeb;
+  --gray-light: #f5f5f5;
+  --orange: #edb26b;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: "Kameron", serif;
+  color: var(--brown-dark);
+  background-color: var(--gray);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gradient-line {
+  width: 80%;
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    rgba(234, 235, 235, 0.6) 0%,
+    rgba(224, 170, 56, 0.6) 50%,
+    rgba(234, 235, 235, 0.6) 100%
+  );
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--brown-dark);
+  letter-spacing: 0.24rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+}
+
+.section-title p {
+  margin: 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.button {
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 90px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.button-primary {
+  background: var(--brown-light);
+  color: var(--white);
+  font-size: medium;
+  font-weight: 500;
+  letter-spacing: 0.24rem;
+}
+
+.button-primary:hover {
+  background: var(--brown-medium);
+}
+
+.button-secondary {
+  background: var(--white);
+  color: var(--brown-dark);
+  font-size: medium;
+  letter-spacing: 0.24rem;
+  border: 1px solid var(--brown-light);
+}
+
+.button-secondary:hover {
+  border: 1px solid var(--brown-pink);
+  color: var(--brown-pink);
+}
+
+.button-secondary.active {
+  background: var(--brown-light);
+  border-color: var(--brown-light);
+  color: white;
+}
+
+/* ===== ヘッダー ===== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: row;
+  padding: 32px 16px 0px 16px;
+
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--brown-dark);
+  letter-spacing: 0.24rem;
+}
+
+.nav {
+  display: flex;
+  gap: 48px;
+}
+
+.nav a {
+  color: var(--brown-dark);
+  text-decoration: none;
+}
+
+/* ===== TOP ===== */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 110px;
+}
+
+.allcamo_logo {
+  opacity: 0;
+  filter: blur(10px);
+  animation: blur-in 1.8s ease forwards;
+}
+
+.hero_text {
+  line-height: 32px;
+  letter-spacing: 0.25rem;
+  color: var(--brown-darker);
+  text-align: center;
+  margin: 0px;
+  margin-top: 24px;
+}
+
+@keyframes blur-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ===== WORKS ===== */
+#works .container {
+  gap: 24px;
+  padding-bottom: 24px;
+}
+
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-label {
+  font-family: "Kaisei Opti", sans-serif;
+  letter-spacing: 0.2rem;
+  color: var(--brown-dark);
+  text-align: center;
+}
+
+.filter-buttons {
+  padding-top: 8px;
+}
+
+.filter-buttons button {
+  padding: 10px 16px;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+/* マソンリーグリッド */
+.works-grid {
+  width: 80%;
+}
+
+.work-item {
+  width: calc(33.333% - 7px);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding-bottom: 10px;
+}
+
+.work-item[style*="display: none"] {
+  display: none !important;
+}
+
+.work-item:hover {
+  transform: translateY(-3px);
+}
+
+.work-thumbnail {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.work-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.work-text {
+  font-family: "Kaisei Opti", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.work-title {
+  margin: 0;
+  font-size: 14px;
+}
+
+.work-subtitle {
+  margin: 0;
+  font-size: 12px;
+}
+
+.empty-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+/* スクロールアニメーション */
+.works-grid,
+.about-content,
+.contact-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.works-grid.visible,
+.about-content.visible,
+.contact-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== WORKS DETAIL ===== */
+.work-detail-page .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+}
+
+.thumbnail {
+  font-family: "Kaisei Opti", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tubasa_lp {
+  margin: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.detail-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.is-personal {
+  font-size: 12px;
+  margin: 0;
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.content-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* ===== ABOUT ===== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0px;
+  border-bottom: 0.5px dashed var(--brown-light);
+}
+
+.timeline-item :nth-child(1) {
+  width: 150px;
+}
+
+.timeline-item :nth-child(2) {
+  width: 100%;
+}
+
+.empty-message,
+.about-message,
+.about-timeline {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+  line-height: 24px;
+  color: var(--brown-darker);
+  margin: 0;
+}
+
+.tools {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.tool {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 90px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  background: var(--white);
+  letter-spacing: 0.24rem;
+  color: var(--brown-darker);
+  border: 1px solid var(--brown-light);
+}
+
+.feature-list {
+  padding: 0px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  gap: 24px;
+}
+
+.feature-item {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.2rem;
+  line-height: 24px;
+  color: var(--brown-darker);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+  padding: 48px 0;
+}
+
+#about .container,
+#contact .container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-content,
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 80%;
+  max-width: 850px;
+  padding: 0px 32px;
+}
+
+/* フォームカード */
+.about-card,
+.contact-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.about-section,
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-heading,
+.contact-heading {
+  font-family: "Kaisei Opti", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: var(--brown-dark);
+  margin: 0;
+  padding-left: 12px;
+  border-left: 3px solid var(--orange);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px 0px 0px 0px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0px 32px;
+}
+
+.form-group label {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1rem;
+  color: var(--brown-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px 16px;
+  border: 1px solid var(--brown-light);
+  border-radius: 4px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 14px;
+  background-color: var(--gray-light);
+  color: var(--brown-dark);
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--brown-pink);
+}
+
+.contact-form .button {
+  align-self: center;
+  border-radius: 8px;
+  background-color: white;
+  color: var(--brown-dark);
+  border: 1px solid var(--brown-light);
+  padding: 10px 64px;
+}
+
+.contact-email {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+  color: var(--brown-dark);
+  margin: 0;
+}
+
+.sns-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sns-button {
+  font-family: "Noto Sans JP", sans-serif;
+  padding: 10px 16px;
+  font-size: 14px;
+  letter-spacing: 0.24rem;
+}
+
+/* ===== THANKS ===== */
+.thanks-container {
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 96px 48px;
+}
+
+.thanks-container h1 {
+  margin: 0;
+  font-family: "Kaisei Opti", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.24rem;
+  color: var(--brown-dark);
+}
+
+.thanks-container p {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.21rem;
+  line-height: 24px;
+  color: var(--brown-dark);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.checkmark img {
+  animation: pulse 0.8s ease 0.3s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* ===== フッター ===== */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.brand-name {
+  letter-spacing: 0.2rem;
+  font-size: 20px;
+}
+
+.brand-name p {
+  margin: 0;
+  font-family: "Kaisei Opti", sans-serif;
+  font-size: 12px;
+}
+
+.copy {
+  font-size: 16px;
+  letter-spacing: 0.2rem;
+  line-height: 28px;
+}
+
+/* ===== レスポンシブ ===== */
+@media (max-width: 1000px) {
+  /* ===== WORKS ===== */
+  .work-item {
+    width: calc(33% - 14px);
+  }
+}
+
+@media (max-width: 768px) {
+  .work-item {
+    width: calc(50% - 10px);
+  }
+  .contact-content {
+    width: 90%;
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+
+  .sns-buttons {
+    flex-direction: column;
+  }
+
+  .sns-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /*  */
+  .about-content {
+    width: 90%;
+  }
+
+  .about-card {
+    padding: 24px;
+  }
+
+  .timeline-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 0px;
+    border-bottom: 0.5px dashed var(--brown-light);
+  }
+
+  .timeline-item :nth-child(1) {
+    width: 150px;
+  }
+
+  .timeline-item :nth-child(2) {
+    width: 100%;
+  }
+}
