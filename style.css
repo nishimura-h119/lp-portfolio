@@ -44,15 +44,19 @@ body {
   );
 }
 
+section {
+  scroll-margin-top: 10px;
+}
+
 .section-title {
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px);
   font-weight: 400;
   color: var(--brown-dark);
   letter-spacing: 0.24rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 400px;
+  width: clamp(200px, 100vw, 400px);
 }
 
 .section-title p {
@@ -71,14 +75,13 @@ body {
   padding: 12px 32px;
   border-radius: 90px;
   text-decoration: none;
-  font-size: 16px;
   transition: all 0.3s;
 }
 
 .button-primary {
   background: var(--brown-light);
   color: var(--white);
-  font-size: medium;
+  font-size: clamp(12px, 2vw, 16px);
   font-weight: 500;
   letter-spacing: 0.24rem;
 }
@@ -90,7 +93,7 @@ body {
 .button-secondary {
   background: var(--white);
   color: var(--brown-dark);
-  font-size: medium;
+  font-size: clamp(12px, 2vw, 16px);
   letter-spacing: 0.24rem;
   border: 1px solid var(--brown-light);
 }
@@ -114,7 +117,6 @@ body {
   flex-direction: row;
   padding: 32px 16px 0px 16px;
 
-  font-size: 20px;
   font-weight: 400;
   color: var(--brown-dark);
   letter-spacing: 0.24rem;
@@ -122,12 +124,13 @@ body {
 
 .nav {
   display: flex;
-  gap: 48px;
+  gap: clamp(14px, 4vw, 48px);
 }
 
 .nav a {
   color: var(--brown-dark);
   text-decoration: none;
+  font-size: clamp(12px, 3vw, 20px);
 }
 
 /* ===== TOP ===== */
@@ -136,22 +139,26 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  padding: 110px;
+  padding: 0;
+  padding-top: clamp(40px, 2vw, 110px);
+  padding-bottom: clamp(40px, 2vw, 110px);
 }
 
 .allcamo_logo {
   opacity: 0;
   filter: blur(10px);
   animation: blur-in 1.8s ease forwards;
+  width: 85%;
 }
 
 .hero_text {
-  line-height: 32px;
-  letter-spacing: 0.25rem;
+  line-height: clamp(18px, 2vw, 32px);
+  letter-spacing: clamp(0.1rem, 1vw, 0.25rem);
   color: var(--brown-darker);
   text-align: center;
   margin: 0px;
   margin-top: 24px;
+  font-size: clamp(8.5px, 2vw, 16px);
 }
 
 @keyframes blur-in {
@@ -180,6 +187,7 @@ body {
   letter-spacing: 0.2rem;
   color: var(--brown-dark);
   text-align: center;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .filter-buttons {
@@ -187,7 +195,10 @@ body {
 }
 
 .filter-buttons button {
-  padding: 10px 16px;
+  padding-top: clamp(10px, 1vw, 10px);
+  padding-bottom: clamp(10px, 1vw, 10px);
+  padding-left: clamp(12px, 1vw, 16px);
+  padding-right: clamp(12px, 1vw, 16px);
   font-family: "Noto Sans JP", sans-serif;
 }
 
@@ -235,12 +246,13 @@ body {
 
 .work-title {
   margin: 0;
-  font-size: 14px;
+
+  font-size: clamp(12px, 2vw, 14px);
 }
 
 .work-subtitle {
   margin: 0;
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
 }
 
 .empty-message {
@@ -292,12 +304,12 @@ body {
 }
 
 .detail-title {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   margin: 0;
 }
 
 .is-personal {
-  font-size: 12px;
+  font-size: clamp(10px, 2vw, 12px);
   margin: 0;
 }
 
@@ -327,11 +339,11 @@ body {
 .profile-name {
   font-family: "Kaisei Opti", sans-serif;
   text-align: center;
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
 }
 
 .profile-alphabet {
-  font-size: 16px;
+  font-size: clamp(14px, 2vw, 16px);
 }
 
 .profile-container {
@@ -355,7 +367,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: clamp(8px, 2vw, 12px);
   padding: 8px 0px;
   border-bottom: 0.5px dashed var(--brown-light);
 }
@@ -372,9 +384,9 @@ body {
 .about-message,
 .about-timeline {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.2rem;
-  line-height: 24px;
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: clamp(18px, 2vw, 32px);
+  letter-spacing: clamp(0.1rem, 1vw, 0.25rem);
   color: var(--brown-darker);
   margin: 0;
 }
@@ -390,7 +402,7 @@ body {
   padding: 10px 16px;
   border-radius: 90px;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 16px;
+  font-size: clamp(12px, 2vw, 16px);
   background: var(--white);
   letter-spacing: 0.24rem;
   color: var(--brown-darker);
@@ -398,17 +410,19 @@ body {
 }
 
 .feature-list {
-  padding: 0px 32px;
+  padding: 0px;
+  padding-left: clamp(4px, 2vw, 32px);
+  padding-right: clamp(4px, 2vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: start;
-  gap: 24px;
+  gap: clamp(18px, 2vw, 24px);
 }
 
 .feature-item {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 2vw, 14px);
   letter-spacing: 0.2rem;
   line-height: 24px;
   color: var(--brown-darker);
@@ -418,6 +432,10 @@ body {
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
+}
+
+.feature-item img {
+  width: clamp(18px, 2vw, 28px);
 }
 
 /* ===== CONTACT ===== */
@@ -447,7 +465,7 @@ body {
 .contact-card {
   background-color: var(--white);
   border-radius: 16px;
-  padding: 32px;
+  padding: clamp(24px, 2vw, 32px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -461,7 +479,7 @@ body {
 .about-heading,
 .contact-heading {
   font-family: "Kaisei Opti", sans-serif;
-  font-size: 16px;
+  font-size: clamp(12px, 2vw, 16px);
   font-weight: 700;
   letter-spacing: 0.2rem;
   color: var(--brown-dark);
@@ -481,12 +499,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 0px 32px;
+  padding: 0px;
+  padding-left: clamp(4px, 2vw, 32px);
+  padding-right: clamp(4px, 2vw, 32px);
 }
 
 .form-group label {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
+  font-size: clamp(10px, 2vw, 14px);
   letter-spacing: 0.1rem;
   color: var(--brown-dark);
 }
@@ -497,7 +517,7 @@ body {
   border: 1px solid var(--brown-light);
   border-radius: 4px;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 14px;
+  font-size: clamp(10px, 2vw, 14px);
   background-color: var(--gray-light);
   color: var(--brown-dark);
   transition: border-color 0.3s;
@@ -520,7 +540,7 @@ body {
 
 .contact-email {
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 16px;
+  font-size: clamp(12px, 2vw, 16px);
   letter-spacing: 0.1rem;
   color: var(--brown-dark);
   margin: 0;
@@ -535,7 +555,7 @@ body {
 .sns-button {
   font-family: "Noto Sans JP", sans-serif;
   padding: 10px 16px;
-  font-size: 14px;
+  font-size: clamp(10px, 2vw, 14px);
   letter-spacing: 0.24rem;
 }
 
@@ -597,7 +617,7 @@ body {
 
 .brand-name {
   letter-spacing: 0.2rem;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px);
 }
 
 .brand-name p {
@@ -607,7 +627,7 @@ body {
 }
 
 .copy {
-  font-size: 16px;
+  font-size: clamp(12px, 2vw, 16px);
   letter-spacing: 0.2rem;
   line-height: 28px;
 }
@@ -621,41 +641,40 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* works */
   .work-item {
     width: calc(50% - 10px);
   }
-  .contact-content {
+  /* .contact-content {
     width: 90%;
   }
 
   .contact-card {
     padding: 24px;
-  }
+  } */
 
-  .sns-buttons {
-    flex-direction: column;
-  }
-
-  .sns-button {
-    width: 100%;
-    text-align: center;
-  }
-
-  /*  */
-  .about-content {
+  /* about */
+  /* .about-content {
     width: 90%;
   }
 
   .about-card {
     padding: 24px;
+  } */
+
+  /* 使用ツール */
+  .tools {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
   }
 
+  /* 略歴 */
   .timeline-item {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 12px;
     padding: 8px 0px;
     border-bottom: 0.5px dashed var(--brown-light);
   }
@@ -666,5 +685,38 @@ body {
 
   .timeline-item :nth-child(2) {
     width: 100%;
+  }
+
+  /* contact */
+  .sns-buttons {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 426px) {
+  .site-header {
+    align-items: center;
+    justify-content: center;
+    padding-top: 16px;
+  }
+
+  .profile-container {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px;
+  }
+
+  .profile-name {
+    font-size: clamp(18px, 2vw, 20px);
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .profile-alphabet {
+    margin: 0;
   }
 }

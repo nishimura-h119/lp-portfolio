@@ -165,14 +165,39 @@ document.addEventListener("DOMContentLoaded", () => {
   // 初期状態
   document.querySelector('[data-type="all"]')?.classList.add("active");
   document.querySelector('[data-genre="all"]')?.classList.add("active");
-
   window.addEventListener("load", () => {
-    const msnry = new Masonry(worksGrid, {
-      itemSelector: ".work-item",
-      columnWidth: worksGrid.offsetWidth / 3 - 10,
-      gutter: 10,
-      percentPosition: false,
-      transitionDuration: 0,
+    // 画面幅に応じたカラム数を取得
+    function getColumnCount() {
+      if (window.innerWidth <= 768) {
+        return 2; // 768px以下は2カラム
+      } else if (window.innerWidth <= 1000) {
+        return 3; // 1000px以下は3カラム
+      } else {
+        return 3; // それ以上も3カラム
+      }
+    }
+
+    function initMasonry() {
+      const columnCount = getColumnCount();
+      return new Masonry(worksGrid, {
+        itemSelector: ".work-item",
+        columnWidth: worksGrid.offsetWidth / columnCount - 10,
+        gutter: 10,
+        percentPosition: false,
+        transitionDuration: 0,
+      });
+    }
+
+    let msnry = initMasonry();
+
+    // リサイズ時に再計算
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        msnry.destroy();
+        msnry = initMasonry();
+      }, 250);
     });
 
     let currentType = "all";
@@ -224,18 +249,12 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         if (visibleCount > 0) {
           msnry.destroy();
-          const newMsnry = new Masonry(worksGrid, {
-            itemSelector: ".work-item",
-            columnWidth: worksGrid.offsetWidth / 3 - 10,
-            gutter: 10,
-            percentPosition: false,
-            transitionDuration: 0,
-          });
+          msnry = initMasonry(); // 再初期化
         }
       }, 0);
     }
 
-    // 制作物フィルター
+    // フィルター処理は変更なし
     document.querySelectorAll("[data-type]").forEach((btn) => {
       if (btn.closest(".works-grid")) return;
 
@@ -249,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ジャンルフィルター
     document.querySelectorAll("[data-genre]").forEach((btn) => {
       if (btn.closest(".works-grid")) return;
 
