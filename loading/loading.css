@@ -45,229 +45,51 @@ svg {
     opacity: 0.2;
   }
   50% {
-    opacity: 0.4;
-  }
-}
-
-/* 電球内部が光る */
-#path1.lit {
-  animation: draw1 5s ease-out 3.8s forwards,
-    filamentGlow 0.5s ease-out 3.8s forwards;
-}
-
-@keyframes filamentGlow {
-  from {
-    stroke: #6d5f61;
-  }
-  to {
-    stroke: #ffd700;
+    opacity: 0.6;
   }
 }
 
 svg path {
   fill: none;
   stroke: #6d5f61;
-  stroke-width: 2.5;
+  stroke-width: 2;
   stroke-linecap: round;
 }
 
-/* パス3: 一番下の渦巻き部分 - 最初に描画 */
-#path3 {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: draw3 2.5s ease-out forwards;
-}
-
-/* パス2: 電球本体の大部分 - 2番目に描画（上から下へ） */
-#path2 {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: -1000;
-  animation: draw2 3.5s ease-out 0.05s forwards;
-}
-
-/* パス1: フィラメント部分 - 最後に描画 */
+/* パス1: 最初から表示 */
 #path1 {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+}
+
+/* パス2: 最初から表示 */
+#path2 {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 0;
+}
+
+/* パス3: 電球本体 */
+#path3 {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  animation: draw 6.5s ease-out 0.5s forwards;
+}
+
+/* パス4: 左側の曲線 */
+#path4 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 2.8s ease-out 3.3s forwards;
+}
+
+/* パス5: フィラメント */
+#path5 {
   stroke-dasharray: 700;
   stroke-dashoffset: 700;
-  animation: draw1 5s ease-out 3.8s forwards;
-  stroke: #6d5f61;
+  animation: draw 6s ease-out 4.3s forwards;
 }
 
-@keyframes draw1 {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw2 {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw3 {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-.loading-text {
-  margin-top: 30px;
-  color: #6d5f61;
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 2.5px;
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-  font-family: "Kameron", serif; /* Kameron / Noto Sans JP / Kaisei Opti */
-}
-
-.loading-text span {
-  display: inline-block;
-  animation: wave 3s ease-in-out infinite;
-}
-
-.loading-text span:nth-child(1) {
-  animation-delay: 0s;
-}
-.loading-text span:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.loading-text span:nth-child(3) {
-  animation-delay: 0.4s;
-}
-.loading-text span:nth-child(4) {
-  animation-delay: 0.6s;
-}
-.loading-text span:nth-child(5) {
-  animation-delay: 0.8s;
-}
-.loading-text span:nth-child(6) {
-  animation-delay: 1s;
-}
-.loading-text span:nth-child(7) {
-  animation-delay: 1.2s;
-}
-
-@keyframes wave {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-7px);
-  }
-}
-
-/* ローディング画面のオーバーレイ */
-#loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #eaebeb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 9999;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-
-#loading-overlay.fade-out {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.loading-container {
-  text-align: center;
-}
-
-svg {
-  width: 200px;
-  height: auto;
-  filter: drop-shadow(0 0 20px rgba(109, 95, 97, 0.2));
-}
-
-/* 電球が光る演出 */
-#bulb-glow {
-  opacity: 0;
-}
-
-#bulb-glow.active {
-  animation: breathe 3s ease-in-out infinite;
-}
-
-@keyframes breathe {
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-  50% {
-    opacity: 0.4;
-  }
-}
-
-/* 電球内部が光る */
-#path1.lit {
-  animation: draw1 5s ease-out 3.8s forwards,
-    filamentGlow 0.5s ease-out 3.8s forwards;
-}
-
-@keyframes filamentGlow {
-  from {
-    stroke: #6d5f61;
-  }
-  to {
-    stroke: #ffd700;
-  }
-}
-
-svg path {
-  fill: none;
-  stroke: #6d5f61;
-  stroke-width: 2.5;
-  stroke-linecap: round;
-}
-
-/* パス3: 一番下の渦巻き部分 - 最初に描画 */
-#path3 {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
-  animation: draw3 2.5s ease-out forwards;
-}
-
-/* パス2: 電球本体の大部分 - 2番目に描画（上から下へ） */
-#path2 {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000; /* 修正: 正の値に変更 */
-  animation: draw2 3.5s ease-out 0.05s forwards;
-}
-
-/* パス1: フィラメント部分 - 最後に描画 */
-#path1 {
-  stroke-dasharray: 700;
-  stroke-dashoffset: 700;
-  animation: draw1 5s ease-out 3.8s forwards;
-  stroke: #6d5f61;
-}
-
-@keyframes draw1 {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw2 {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes draw3 {
+@keyframes draw {
   to {
     stroke-dashoffset: 0;
   }

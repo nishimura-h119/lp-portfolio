@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (!hasVisitedThisSession) {
     // 初回訪問（サイト外からのアクセス）の場合
-    // 5.5秒後に電球を光らせる
+    // 6.3秒後に電球を光らせる
     setTimeout(() => {
       const glow = document.getElementById("bulb-glow");
       if (glow) {
         glow.classList.add("active");
       }
-    }, 5500);
+    }, 6300);
 
-    // 7.5秒後にローディング画面をフェードアウト
+    // 8秒後にローディング画面をフェードアウト
     setTimeout(() => {
       if (overlay) {
         overlay.classList.add("fade-out");
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // セッションストレージに訪問済みフラグを設定
       sessionStorage.setItem("hasVisited", "true");
-    }, 7500);
+    }, 8000);
   } else {
     // 2回目以降（サイト内遷移）の場合は即座に非表示
     if (overlay) {
