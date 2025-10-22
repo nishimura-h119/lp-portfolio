@@ -288,6 +288,33 @@ section {
   gap: 32px;
 }
 
+.back-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--brown-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-left: 32px;
+  transition: opacity 0.3s ease;
+}
+
+.back-button:hover {
+  opacity: 0.7;
+}
+
+.back-arrow {
+  width: 24px;
+  height: 24px;
+  filter: invert(21%) sepia(10%) saturate(634%) hue-rotate(314deg) brightness(95%) contrast(87%);
+}
+
 .thumbnail {
   font-family: "Kaisei Opti", sans-serif;
   text-align: center;
@@ -295,9 +322,12 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 80%;
+  max-width: 850px;
 }
 
 .tubasa_lp {
+  width: 100%;
   margin: 24px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -319,6 +349,8 @@ section {
   justify-content: center;
   align-items: flex-start;
   gap: 24px;
+  width: 80%;
+  max-width: 850px;
 }
 
 .content-item {
@@ -373,7 +405,7 @@ section {
 }
 
 .timeline-item :nth-child(1) {
-  width: 150px;
+  width: 200px;
 }
 
 .timeline-item :nth-child(2) {
@@ -462,7 +494,8 @@ section {
 
 /* フォームカード */
 .about-card,
-.contact-card {
+.contact-card,
+.detail-card {
   background-color: var(--white);
   border-radius: 16px;
   padding: clamp(24px, 2vw, 32px);
