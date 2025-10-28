@@ -312,7 +312,8 @@ section {
 .back-arrow {
   width: 24px;
   height: 24px;
-  filter: invert(21%) sepia(10%) saturate(634%) hue-rotate(314deg) brightness(95%) contrast(87%);
+  filter: invert(21%) sepia(10%) saturate(634%) hue-rotate(314deg)
+    brightness(95%) contrast(87%);
 }
 
 .thumbnail {

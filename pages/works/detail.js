@@ -19,8 +19,7 @@ const works = [
       },
       {
         title: "構成の工夫",
-        content:
-          "トータルフィー制度をFVで明確訴求、治療の流れとFAQで不安軽減",
+        content: "トータルフィー制度をFVで明確訴求、治療の流れとFAQで不安軽減",
       },
       {
         title: "デザイン方針",
@@ -30,6 +29,8 @@ const works = [
     remarks: "なし",
     period: "2025年9月",
     url: "https://nishimura-h119.github.io/lp-portfolio/works/aragishi-dental/",
+    mockPc: "assets/images/works/aragishi_lp_pc.jpg",
+    mockSp: "assets/images/works/aragishi_lp_sp.jpg",
   },
   {
     id: 2,
@@ -68,12 +69,14 @@ const works = [
     remarks: "なし",
     period: "2025年8月",
     url: "",
+    mockPc: "assets/images/works/tsubasa_lp_pc.jpg",
+    mockSp: "assets/images/works/tsubasa_lp_sp.jpg",
   },
   {
     id: 3,
     type: "lp",
     genre: ["medical"],
-    image: "assets/images/works/hatio_lp.jpg",
+    image: "assets/images/works/hachio_lp.jpg",
     title: "八尾内科クリニック| 受診促進LP",
     isPersonal: true,
     // 詳細情報
@@ -99,6 +102,8 @@ const works = [
     remarks: "なし",
     period: "2025年9月",
     url: "https://nishimura-h119.github.io/lp-portfolio/works/hachio-clinic/",
+    mockPc: "assets/images/works/hachio_lp_pc.jpg",
+    mockSp: "assets/images/works/hachio_lp_sp.jpg",
   },
   {
     id: 4,
@@ -211,6 +216,8 @@ const works = [
     remarks: "なし",
     period: "2025年7月",
     url: "",
+    mockPc: "assets/images/works/lue_lp_pc.jpg",
+    mockSp: "assets/images/works/lue_lp_sp.jpg",
   },
   {
     id: 8,
@@ -221,7 +228,7 @@ const works = [
     isPersonal: true,
     // 詳細情報
     description:
-      'つばさ訪問看護ステーション｜採用LPのバナー①ブランク明けで復職に不安を抱える元看護師をターゲットに、「現場に戻れるか不安」という心理に寄り添うバナーを制作。「久しぶりの現場、ついていけるかな……」という内心のつぶやきをコピーに用いて共感を促し、OJTや同行訪問などのサポート体制を明示することで安心感を与えている。CTAボタンや配色はLPとトーンを揃え、視認性と信頼感のバランスを意識した設計としている。',
+      "つばさ訪問看護ステーション｜採用LPのバナー①ブランク明けで復職に不安を抱える元看護師をターゲットに、「現場に戻れるか不安」という心理に寄り添うバナーを制作。「久しぶりの現場、ついていけるかな……」という内心のつぶやきをコピーに用いて共感を促し、OJTや同行訪問などのサポート体制を明示することで安心感を与えている。CTAボタンや配色はLPとトーンを揃え、視認性と信頼感のバランスを意識した設計としている。",
     inCharge: ["コピーライティング", "デザイン"],
     genreTags: ["バナー", "医療", "採用"],
     tools: ["Figma", "ImageFX"],
@@ -323,6 +330,7 @@ const works = [
     remarks: "なし",
     period: "2025年7月",
     url: "https://seen-lp.vercel.app/",
+    mockPc: "assets/images/works/seen_lp_pc.jpg",
   },
   {
     id: 12,
@@ -517,24 +525,21 @@ function renderWorkDetail(work) {
   // 担当領域のボタン
   const inChargeButtons = work.inCharge
     .map(
-      (item) =>
-        `<div class="button button-secondary sns-button">${item}</div>`
+      (item) => `<div class="button button-secondary sns-button">${item}</div>`
     )
     .join("");
 
   // ジャンルのボタン
   const genreButtons = work.genreTags
     .map(
-      (item) =>
-        `<div class="button button-secondary sns-button">${item}</div>`
+      (item) => `<div class="button button-secondary sns-button">${item}</div>`
     )
     .join("");
 
   // 使用ツールのボタン
   const toolButtons = work.tools
     .map(
-      (item) =>
-        `<div class="button button-secondary sns-button">${item}</div>`
+      (item) => `<div class="button button-secondary sns-button">${item}</div>`
     )
     .join("");
 
@@ -598,6 +603,42 @@ function renderWorkDetail(work) {
       `
           : ""
       }
+
+${
+  work.mockPc || work.mockSp // どちらか片方でもあればOK
+    ? `
+    <div class="content-item">
+      <h3 class="contact-heading">画面を確認</h3>
+      <div class="sns-buttons">
+        ${
+          work.mockPc
+            ? `
+        <a href="../../${work.mockPc}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="button button-secondary sns-button">
+          PC版を見る
+        </a>
+        `
+            : ""
+        }
+        ${
+          work.mockSp
+            ? `
+        <a href="../../${work.mockSp}" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="button button-secondary sns-button">
+          スマホ版を見る
+        </a>
+        `
+            : ""
+        }
+      </div>
+    </div>
+    `
+    : ""
+}
     </div>
   `;
 
