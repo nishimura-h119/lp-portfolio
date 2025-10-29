@@ -477,6 +477,8 @@ const works = [
     remarks: "なし",
     period: "2025年10月",
     url: "",
+    mockPc: "assets/images/works/hayakawa_lp_pc.png",
+    mockSp: "assets/images/works/hayakawa_lp_sp.png",
   },
 ];
 

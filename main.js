@@ -19,7 +19,7 @@ const works = [
     id: 3,
     type: "lp",
     genre: ["medical"],
-    image: "assets/images/works/hatio_lp.jpg",
+    image: "assets/images/works/hachio_lp.jpg",
     title: "八尾内科クリニック| 受診促進LP",
     isPersonal: true,
   },
@@ -50,7 +50,7 @@ const works = [
   {
     id: 7,
     type: "lp",
-    genre: ["beauty", "women"],
+    genre: ["beauty"],
     image: "assets/images/works/lue_lp.jpg",
     title: "Lue | フェイシャルサロン",
     isPersonal: true,
@@ -71,22 +71,22 @@ const works = [
     title: "まつげエクステ サービス告知バナー",
     isPersonal: true,
   },
-  {
-    id: 10,
-    type: "banner",
-    genre: ["women", "other"],
-    image: "assets/images/works/apparel_banner_1.jpg",
-    title: "アパレルブランド広告バナー ",
-    isPersonal: true,
-  },
-  {
-    id: 11,
-    type: "lp",
-    genre: ["other"],
-    image: "assets/images/works/seen_lp.jpg",
-    title: "Seen | 感情記録アプリ",
-    isPersonal: true,
-  },
+  // {
+  //   id: 10,
+  //   type: "banner",
+  //   genre: ["women", "other"],
+  //   image: "assets/images/works/apparel_banner_1.jpg",
+  //   title: "アパレルブランド広告バナー ",
+  //   isPersonal: true,
+  // },
+  // {
+  //   id: 11,
+  //   type: "lp",
+  //   genre: ["other"],
+  //   image: "assets/images/works/seen_lp.jpg",
+  //   title: "Seen | 感情記録アプリ",
+  //   isPersonal: true,
+  // },
   {
     id: 12,
     type: "banner",
@@ -95,46 +95,46 @@ const works = [
     title: "まつげエクステ サービス告知バナー",
     isPersonal: true,
   },
-  {
-    id: 13,
-    type: "banner",
-    genre: ["women", "other"],
-    image: "assets/images/works/travel_banner_1.jpg",
-    title: "海外旅行広告バナー",
-    isPersonal: true,
-  },
-  {
-    id: 14,
-    type: "banner",
-    genre: ["other"],
-    image: "assets/images/works/app_banner_1.jpg",
-    title: "ローコードアプリ開発システム 広告バナー",
-    isPersonal: true,
-  },
-  {
-    id: 15,
-    type: "banner",
-    genre: ["other", "women"],
-    image: "assets/images/works/webinar_banner_1.jpg",
-    title: "サービス説明会広告バナー",
-    isPersonal: true,
-  },
-  {
-    id: 16,
-    type: "banner",
-    genre: ["other"],
-    image: "assets/images/works/drink_banner_1.jpg",
-    title: "桃ドリンク広告バナー",
-    isPersonal: true,
-  },
-  {
-    id: 17,
-    type: "lp",
-    genre: ["other"],
-    image: "assets/images/works/hayakawanouen_lp.jpg",
-    title: "はやかわ農園 | 販促LP",
-    isPersonal: true,
-  },
+  // {
+  //   id: 13,
+  //   type: "banner",
+  //   genre: ["women", "other"],
+  //   image: "assets/images/works/travel_banner_1.jpg",
+  //   title: "海外旅行広告バナー",
+  //   isPersonal: true,
+  // },
+  // {
+  //   id: 14,
+  //   type: "banner",
+  //   genre: ["other"],
+  //   image: "assets/images/works/app_banner_1.jpg",
+  //   title: "ローコードアプリ開発システム 広告バナー",
+  //   isPersonal: true,
+  // },
+  // {
+  //   id: 15,
+  //   type: "banner",
+  //   genre: ["other", "women"],
+  //   image: "assets/images/works/webinar_banner_1.jpg",
+  //   title: "サービス説明会広告バナー",
+  //   isPersonal: true,
+  // },
+  // {
+  //   id: 16,
+  //   type: "banner",
+  //   genre: ["other"],
+  //   image: "assets/images/works/drink_banner_1.jpg",
+  //   title: "桃ドリンク広告バナー",
+  //   isPersonal: true,
+  // },
+  // {
+  //   id: 17,
+  //   type: "lp",
+  //   genre: ["other"],
+  //   image: "assets/images/works/hayakawanouen_lp.jpg",
+  //   title: "はやかわ農園 | 販促LP",
+  //   isPersonal: true,
+  // },
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -143,16 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
   works.forEach((work) => {
     const item = document.createElement("div");
     item.className = "work-item";
-    item.setAttribute("data-type", work.type);
-    item.setAttribute("data-genre", work.genre.join(","));
 
     item.innerHTML = `
     <div class="work-thumbnail">
       <img src="${work.image}" alt="${work.title}">
     </div>
     <div class="work-text">
-    <p class="work-title">${work.title}</p>
-    ${work.isPersonal ? '<p class="work-subtitle">(自主制作)</p>' : ""}
+      <p class="work-title">${work.title}</p>
+      ${work.isPersonal ? '<p class="work-subtitle">(自主制作)</p>' : ""}
     </div>
   `;
 
@@ -162,9 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 初期状態
-  document.querySelector('[data-type="all"]')?.classList.add("active");
-  document.querySelector('[data-genre="all"]')?.classList.add("active");
   window.addEventListener("load", () => {
     // 画面幅に応じたカラム数を取得
     function getColumnCount() {
@@ -198,87 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
         msnry.destroy();
         msnry = initMasonry();
       }, 250);
-    });
-
-    let currentType = "all";
-    let currentGenre = "all";
-
-    function applyFilter() {
-      const items = document.querySelectorAll(".work-item");
-      let visibleCount = 0;
-
-      items.forEach((item) => {
-        const itemType = item.getAttribute("data-type");
-        const itemGenres = item.getAttribute("data-genre").split(",");
-
-        const typeMatch = currentType === "all" || itemType === currentType;
-        const genreMatch =
-          currentGenre === "all" || itemGenres.includes(currentGenre);
-
-        if (typeMatch && genreMatch) {
-          item.style.display = "block";
-          visibleCount++;
-        } else {
-          item.style.display = "none";
-        }
-      });
-
-      // 0件メッセージの表示/非表示
-      let emptyMessage = document.querySelector(".empty-message");
-
-      if (visibleCount === 0) {
-        if (!emptyMessage) {
-          emptyMessage = document.createElement("div");
-          emptyMessage.className = "empty-message";
-          emptyMessage.textContent =
-            "まだこの条件にヒットする制作物はありません。";
-          worksGrid.parentElement.insertBefore(
-            emptyMessage,
-            worksGrid.nextSibling
-          );
-        }
-        emptyMessage.style.display = "block";
-        worksGrid.style.display = "none";
-      } else {
-        if (emptyMessage) {
-          emptyMessage.style.display = "none";
-        }
-        worksGrid.style.display = "block";
-      }
-
-      setTimeout(() => {
-        if (visibleCount > 0) {
-          msnry.destroy();
-          msnry = initMasonry(); // 再初期化
-        }
-      }, 0);
-    }
-
-    // フィルター処理は変更なし
-    document.querySelectorAll("[data-type]").forEach((btn) => {
-      if (btn.closest(".works-grid")) return;
-
-      btn.addEventListener("click", () => {
-        currentType = btn.getAttribute("data-type");
-        document.querySelectorAll("[data-type]").forEach((b) => {
-          if (!b.closest(".works-grid")) b.classList.remove("active");
-        });
-        btn.classList.add("active");
-        applyFilter();
-      });
-    });
-
-    document.querySelectorAll("[data-genre]").forEach((btn) => {
-      if (btn.closest(".works-grid")) return;
-
-      btn.addEventListener("click", () => {
-        currentGenre = btn.getAttribute("data-genre");
-        document.querySelectorAll("[data-genre]").forEach((b) => {
-          if (!b.closest(".works-grid")) b.classList.remove("active");
-        });
-        btn.classList.add("active");
-        applyFilter();
-      });
     });
   });
 
