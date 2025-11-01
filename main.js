@@ -71,14 +71,14 @@ const works = [
     title: "まつげエクステ サービス告知バナー",
     isPersonal: true,
   },
-  // {
-  //   id: 10,
-  //   type: "banner",
-  //   genre: ["women", "other"],
-  //   image: "assets/images/works/apparel_banner_1.jpg",
-  //   title: "アパレルブランド広告バナー ",
-  //   isPersonal: true,
-  // },
+  {
+    id: 10,
+    type: "banner",
+    genre: ["women", "other"],
+    image: "assets/images/works/hachio_flyer.png",
+    title: "人間ドック 受診促進チラシ",
+    isPersonal: true,
+  },
   // {
   //   id: 11,
   //   type: "lp",
