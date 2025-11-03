@@ -140,7 +140,7 @@ const works = [
     id: 5,
     type: "banner",
     genre: ["medical", "women"],
-    image: "assets/images/works/dental_banner_1.jpg",
+    image: "assets/images/works/dental_banner.png",
     title: "歯列矯正 広告バナー",
     isPersonal: true,
     // 詳細情報
