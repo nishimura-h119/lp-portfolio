@@ -318,35 +318,30 @@ const works = [
   },
   {
     id: 11,
-    type: "lp",
-    genre: ["other"],
-    image: "assets/images/works/seen_lp.jpg",
-    title: "Seen | 感情記録アプリ",
+    type: "banner",
+    genre: ["beauty", "women"],
+    image: "assets/images/works/essence_water_banner.png",
+    title: "化粧水 告知バナー",
     isPersonal: true,
     // 詳細情報
     description:
-      '感情を"誰にも見せずに書き出す"ことができる、クローズドSNS風アプリ。感情的な投稿に後悔した経験のある人に向けて「落ち着いて感情整理できる」空間を提供。',
-    inCharge: ["設計", "コピーライティング", "デザイン", "コーディング"],
-    genreTags: ["LP", "アプリ"],
-    tools: ["Figma", "Next.js", "TypeScript", "React", "Tailwind CSS"],
+      "サラッとした使用感を好む女性をターゲットに制作しました。柔らかなパステルトーンとみずみずしさを感じる水滴モチーフで、肌への浸透感と保湿力を視覚的に表現しています。",
+    inCharge: ["コピーライティング", "デザイン"],
+    genreTags: ["バナー", "美容", "女性向け"],
+    tools: ["Figma", "Canva", "ImageFX"],
     points: [
       {
         title: "ターゲット設定",
-        content: "感情的な投稿に後悔した経験のある人",
-      },
-      {
-        title: "構成の工夫",
-        content: "プライバシーと安心感を重視した設計",
+        content: "化粧水に対してサラッとした使用感を求める女性",
       },
       {
         title: "デザイン方針",
-        content: "落ち着いたトーンで感情整理をサポート",
+        content: "肌への浸透感と保湿力を視覚的に表現",
       },
     ],
     remarks: "なし",
-    period: "2025年7月",
-    url: "https://seen-lp.vercel.app/",
-    mockPc: "assets/images/works/seen_lp_pc.jpg",
+    period: "2025年11月",
+    url: "",
   },
   {
     id: 12,

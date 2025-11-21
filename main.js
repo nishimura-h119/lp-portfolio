@@ -79,14 +79,14 @@ const works = [
     title: "人間ドック 受診促進チラシ",
     isPersonal: true,
   },
-  // {
-  //   id: 11,
-  //   type: "lp",
-  //   genre: ["other"],
-  //   image: "assets/images/works/seen_lp.jpg",
-  //   title: "Seen | 感情記録アプリ",
-  //   isPersonal: true,
-  // },
+  {
+    id: 11,
+    type: "banner",
+    genre: ["beauty", "women"],
+    image: "assets/images/works/essence_water_banner.png",
+    title: "化粧水 告知バナー",
+    isPersonal: true,
+  },
   {
     id: 12,
     type: "banner",
