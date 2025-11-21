@@ -223,4 +223,31 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".contact-card").forEach((content) => {
     observer.observe(content);
   });
+
+  // contact-cardをすべて監視
+  document.querySelectorAll(".price-card").forEach((content) => {
+    observer.observe(content);
+  });
+
+  // foriioボタンのスクロールアニメーション
+  const foriioButton = document.querySelector(".foriio-button");
+
+  if (foriioButton) {
+    const buttonObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            // 一度だけ実行
+            buttonObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.8,
+      }
+    );
+
+    buttonObserver.observe(foriioButton);
+  }
 });
