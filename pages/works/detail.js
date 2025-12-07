@@ -135,7 +135,7 @@ const works = [
     ],
     remarks: "なし",
     period: "2025年9月",
-    url: "",
+    url: "https://x.gd/6IkqX",
   },
   {
     id: 5,
