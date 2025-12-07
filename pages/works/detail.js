@@ -53,7 +53,7 @@ const works = [
       {
         title: "構成の工夫",
         content:
-          "安心感→条件→支援体制→業務効率→応募導線といったストーリー性のあるセクション構成。",
+          "・安心感→条件→支援体制→業務効率→応募導線といったストーリー性のあるセクション構成<br/>・看護師経験に基づく不安解消ストーリーにより、ターゲットペルソナの離脱率を改善するロジックを構築",
       },
       {
         title: "デザイン方針",
@@ -63,9 +63,10 @@ const works = [
       {
         title: "広告連動",
         content:
-          "条件訴求型・不安解消型のバナーを別途制作し、LPとの世界観を統一して誘導効果を高めた。",
+          "条件訴求型・不安解消型のバナーを別途制作し、LPとの世界観を統一して誘導効果を高めた",
       },
     ],
+    result: "パート採用コストを30%削減、応募率（CVR）12%増を見込む設計を実現",
     remarks: "なし",
     period: "2025年8月",
     url: "",
@@ -596,6 +597,11 @@ function renderWorkDetail(work) {
         <div class="timeline">${pointsHTML}</div>
       </div>
 
+      <div class="content-item">
+        <h3 class="contact-heading">成果</h3>
+        <div class="contact-email">${work.result}</div>
+      </div>
+      
       <div class="content-item">
         <h3 class="contact-heading">備考</h3>
         <p class="contact-email">${work.remarks}</p>
